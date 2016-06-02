@@ -1,0 +1,42 @@
+{
+  "name": "react-native-weui",
+  "version": "0.0.1",
+  "description": "weui for react-native",
+  "main": "./lib",
+  "scripts": {
+    "clean": "rimraf ./lib",
+    "build": "npm run clean & babel ./src --out-dir ./lib",
+    "lint": "eslint ./src/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maskzh/react-native-weui.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "weui"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-react-native": "^1.9.0",
+    "eslint": "^2.11.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.2.2",
+    "eslint-plugin-react": "^5.1.1",
+    "rimraf": "^2.5.2"
+  },
+  "author": "maskzh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maskzh/react-native-weui/issues"
+  },
+  "homepage": "https://github.com/maskzh/react-native-weui#readme",
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-native": "^0.26.3"
+  }
+}

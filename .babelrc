@@ -1,0 +1,4 @@
+{
+  "passPerPreset": true,
+  "presets": ["react-native"]
+}
