@@ -6,6 +6,10 @@
     "node": true,
     "mocha": true
   },
+  "globals": {
+    "__DEV__": true,
+    "__NAV__": true
+  },
   "plugins": ["react", "import"],
   "rules": {
     "comma-dangle": 0, # 忽略结尾逗号

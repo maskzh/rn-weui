@@ -1,0 +1,32 @@
+{
+  "name": "example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "react": "15.0.2",
+    "react-native": "^0.26.3",
+    "babel-relay-plugin": "^0.8.1",
+    "immutable": "^3.8.1",
+    "lodash": "^4.12.0",
+    "parse": "^1.8.3",
+    "react": "^0.14.8",
+    "react-native": "^0.25.1",
+    "react-native-blur": "^0.7.11",
+    "react-native-overlay": "^0.4.2",
+    "react-native-scrollable-tab-view": "^0.4.2",
+    "react-native-stylekit": "0.0.3",
+    "react-native-swiper": "^1.4.3",
+    "react-native-vector-icons": "^2.0.1",
+    "react-redux": "^4.4.5",
+    "react-relay": "^0.8.1",
+    "redux": "^3.5.2",
+    "redux-actions": "^0.9.1",
+    "redux-logger": "^2.6.1",
+    "redux-persist": "^3.0.2",
+    "redux-thunk": "^2.0.1",
+    "reselect": "^2.5.1"
+  }
+}
