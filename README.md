@@ -1,5 +1,5 @@
 # react-native-weui
-## 效果图
+### 效果图
 ![](http://elliott.b0.upaiyun.com/img/1554b80f86!sm)
 ![](http://elliott.b0.upaiyun.com/img/c3ffd25032!sm)
 ![](http://elliott.b0.upaiyun.com/img/a964b5531f!sm)
@@ -19,3 +19,15 @@
 - Panel
 - Tab
 - SearchBar
+
+### 安装
+```shell
+npm i rn-weui --save
+```
+
+### 使用
+```js
+import { Button } from 'rn-weui'
+export default () =>
+  <Button type="primary" onPress={() => {}}></Button>
+```

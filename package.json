@@ -1,12 +1,12 @@
 {
-  "name": "react-native-weui",
+  "name": "rn-weui",
   "version": "0.0.1",
   "description": "weui for react-native",
   "main": "./lib",
   "scripts": {
     "clean": "rimraf ./lib",
     "build": "npm run clean & babel ./src --out-dir ./lib",
-    "lint": "eslint ./src/*.js",
+    "lint": "eslint ./src/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
