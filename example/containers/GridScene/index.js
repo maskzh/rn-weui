@@ -4,7 +4,7 @@ import {
   View,
   Image,
 } from 'react-native'
-import { Grids } from '../../../../src'
+import { Grids } from '../../../src'
 
 const styles = StyleSheet.create({
   wrapper: {

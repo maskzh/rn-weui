@@ -9,7 +9,7 @@ import env from './env'
 function setup(): Component {
   console.disableYellowBox = true
 
-  Parse.initialize('rnApp')
+  Parse.initialize('example')
   Parse.serverURL = `${env.serverURL}/parse`
 
   // Relay.injectNetworkLayer(

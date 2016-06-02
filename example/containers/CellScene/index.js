@@ -13,7 +13,7 @@ import {
   CellBody,
   CellFooter,
   CellText
-} from '../../../../src'
+} from '../../../src'
 import S from 'react-native-stylekit'
 
 const styles = StyleSheet.create({

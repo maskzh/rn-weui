@@ -5,7 +5,7 @@ import {
   Modal,
   Text
 } from 'react-native'
-import { ButtonArea, Button } from '../../../../src'
+import { ButtonArea, Button } from '../../../src'
 import S from 'react-native-stylekit'
 
 const styles = StyleSheet.create({
