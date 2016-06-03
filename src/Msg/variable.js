@@ -1,6 +1,9 @@
 export default {
-  weuiGridBorderColor: '#D9D9D9',
-  weuiGridFontSize: 14,
-  weuiGridIconSize: 28,
-  weuiGridColumnCount: 3,
+  weuiMsgPaddingTop: 36,
+  weuiMsgIconGap: 30,
+  weuiMsgTitleGap: 5,
+  weuiMsgTextGap: 25,
+  weuiMsgOprGap: 25,
+  weuiMsgExtraAreaGap: 15,
+  weuiMsgExtraAreaOfMinHeight: 438,
 }

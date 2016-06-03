@@ -5,6 +5,7 @@ import _cell from './Cell/variable'
 import _msg from './Msg/variable'
 
 const _global = {
+  baseFontSize: 16,
   globalFontSize: 14,
 
   // font color
@@ -32,4 +33,12 @@ const _global = {
   gap10: 10,
   gap15: 15,
 }
-export default merge({}, _global, _button, _grid, _cell, _msg)
+
+export default merge(
+  {},
+  _global,
+  _button,
+  _grid,
+  _cell,
+  _msg,
+)
