@@ -10,56 +10,56 @@ import TabBar from './containers/TabBar'
 import { TABBAR } from './containers/TabBar/utils'
 
 // Scene
-import ButtonScene from './containers/ButtonScene'
-import CellScene from './containers/CellScene'
-import ToastScene from './containers/ToastScene'
-import DialogScene from './containers/DialogScene'
-import ProgressScene from './containers/ProgressScene'
-import MsgScene from './containers/MsgScene'
-import ArticleScene from './containers/ArticleScene'
-import ActionSheetScene from './containers/ActionSheetScene'
-import IconsScene from './containers/IconsScene'
-import PanelScene from './containers/PanelScene'
-import TabScene from './containers/TabScene'
-import SearchBarScene from './containers/SearchBarScene'
+import Button from './containers/Button'
+import Cell from './containers/Cell'
+import Toast from './containers/Toast'
+import Dialog from './containers/Dialog'
+import Progress from './containers/Progress'
+import Msg from './containers/Msg'
+import Article from './containers/Article'
+import ActionSheet from './containers/ActionSheet'
+import Icons from './containers/Icons'
+import Panel from './containers/Panel'
+import Tab from './containers/Tab'
+import SearchBar from './containers/SearchBar'
 
 
 const routes = [{
   scene: 'Button',
-  component: ButtonScene
+  component: Button
 }, {
   scene: 'Cell',
-  component: CellScene
+  component: Cell
 }, {
   scene: 'Toast',
-  component: ToastScene
+  component: Toast
 }, {
   scene: 'Dialog',
-  component: DialogScene
+  component: Dialog
 }, {
   scene: 'Progress',
-  component: ProgressScene
+  component: Progress
 }, {
   scene: 'Msg',
-  component: MsgScene
+  component: Msg
 }, {
   scene: 'Article',
-  component: ArticleScene
+  component: Article
 }, {
   scene: 'ActionSheet',
-  component: ActionSheetScene
+  component: ActionSheet
 }, {
   scene: 'Icons',
-  component: IconsScene
+  component: Icons
 }, {
   scene: 'Panel',
-  component: PanelScene
+  component: Panel
 }, {
   scene: 'Tab',
-  component: TabScene
+  component: Tab
 }, {
   scene: 'SearchBar',
-  component: SearchBarScene
+  component: SearchBar
 }]
 
 const styles = StyleSheet.create({

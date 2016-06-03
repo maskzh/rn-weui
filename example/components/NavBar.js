@@ -65,7 +65,7 @@ export default function genNavBar(args) {
     },
     Title(route) {
       const {
-        title = route.title,
+        title = route.title || route.scene,
         onTitlePress
       } = args
       return (

@@ -40,8 +40,8 @@ android/app/libs
 android/keystores/debug.keystore
 
 # Custom
-android/
-ios/
-lib/
+/android
+/ios
+/lib
 .*config
-index.*.js
+/index.*.js

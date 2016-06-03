@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import GridScene from '../GridScene'
+import Grid from '../Grid'
 import { connect } from 'react-redux'
 import { setNavStyles } from '../../actions/navigation'
 
@@ -9,7 +9,7 @@ class Home extends Component {
   }
   render() {
     return (
-      <GridScene navigator={this.props.navigator} />
+      <Grid navigator={this.props.navigator} />
     )
   }
 }
