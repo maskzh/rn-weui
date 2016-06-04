@@ -83,7 +83,7 @@ Toast.propTypes = {
   show: PropTypes.bool,
   onShow: PropTypes.func,
   onRequestClose: PropTypes.func,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
   children: PropTypes.node
 }
 

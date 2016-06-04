@@ -16,7 +16,7 @@ const GridLabel = (props) => {
 }
 GridLabel.propTypes = {
   children: PropTypes.node,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
   others: PropTypes.object
 }
 

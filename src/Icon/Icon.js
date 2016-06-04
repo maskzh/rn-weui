@@ -108,7 +108,7 @@ Icon.propTypes = {
   name: PropTypes.string,
   size: PropTypes.number,
   color: PropTypes.string,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
 }
 
 export default Icon

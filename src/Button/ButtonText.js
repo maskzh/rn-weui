@@ -2,43 +2,44 @@ import React, { PropTypes } from 'react'
 import {
   StyleSheet,
   Text,
+  View,
 } from 'react-native'
-import V from '../variable'
+import $V from '../variable'
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: V.weuiBtnFontSize,
+    fontSize: $V.weuiBtnFontSize,
     textAlign: 'center',
-    marginTop: (V.weuiBtnHeight - V.weuiBtnFontSize) / 2,
-    marginBottom: (V.weuiBtnHeight - V.weuiBtnFontSize) / 2,
+    marginTop: ($V.weuiBtnHeight - $V.weuiBtnFontSize) / 2,
+    marginBottom: ($V.weuiBtnHeight - $V.weuiBtnFontSize) / 2,
   },
 
   miniText: {
-    fontSize: V.weuiBtnMiniFontSize,
-    marginTop: (V.weuiBtnMiniHeight * V.weuiBtnMiniFontSize
-      - V.weuiBtnMiniFontSize) / 2,
-    marginBottom: (V.weuiBtnMiniHeight * V.weuiBtnMiniFontSize
-      - V.weuiBtnMiniFontSize) / 2,
+    fontSize: $V.weuiBtnMiniFontSize,
+    marginTop: ($V.weuiBtnMiniHeight * $V.weuiBtnMiniFontSize
+      - $V.weuiBtnMiniFontSize) / 2,
+    marginBottom: ($V.weuiBtnMiniHeight * $V.weuiBtnMiniFontSize
+      - $V.weuiBtnMiniFontSize) / 2,
   },
 
   // primary
   primaryText: {
-    color: V.weuiBtnFontColor,
+    color: $V.weuiBtnFontColor,
   },
 
   // warn
   warnText: {
-    color: V.weuiBtnFontColor,
+    color: $V.weuiBtnFontColor,
   },
 
   // default
   defaultText: {
-    color: V.weuiBtnDefaultFontColor,
+    color: $V.weuiBtnDefaultFontColor,
   },
 
   // primaryPlain
   primaryPlainText: {
-    color: V.weuiBtnPrimaryBg,
+    color: $V.weuiBtnPrimaryBg,
   },
 
   // defaultPlain
@@ -48,10 +49,10 @@ const styles = StyleSheet.create({
 
   // disabled
   disabledText: {
-    color: V.weuiBtnDisabledFontColor
+    color: $V.weuiBtnDisabledFontColor
   },
   defaultDisabledText: {
-    color: V.weuiBtnDefaultDisabledFontColor
+    color: $V.weuiBtnDefaultDisabledFontColor
   },
 })
 
@@ -82,7 +83,9 @@ const ButtonText = (props) => {
   const textStyles = getTextStyles({ type, plain, size, disabled })
 
   return (
-    <Text style={[styles.text, ...textStyles, style]}>{children}</Text>
+    <View style={{ justifyContent: 'center' }}>
+      <Text style={[styles.text, ...textStyles, style]}>{children}</Text>
+    </View>
   )
 }
 
@@ -91,7 +94,7 @@ ButtonText.propTypes = {
   size: PropTypes.oneOf(['small']),
   plain: PropTypes.bool,
   disabled: PropTypes.bool,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
   children: PropTypes.node,
 }
 

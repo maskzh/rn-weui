@@ -2,60 +2,50 @@ import React from 'react'
 import {
   StyleSheet,
   View,
-  Text
 } from 'react-native'
-import Swiper from 'react-native-swiper'
+import {
+  Article,
+  Section,
+  H1,
+  H2,
+  H3,
+  P,
+  // Text
+} from '../../../src'
+
 
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    marginTop: 44,
+    paddingTop: 64,
+    backgroundColor: '#fbf9fe',
   },
-  slide: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  },
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
-  image: {
-    flex: 1,
-  }
 })
 
 
-const SwiperScene = () =>
-  <Swiper style={styles.wrapper} height={300} autoplay={!false}>
-    <View style={styles.slide1}>
-      <Text style={styles.text}>Hello Swiper</Text>
-    </View>
-    <View style={styles.slide2}>
-      <Text style={styles.text}>Beautiful</Text>
-    </View>
-    <View style={styles.slide3}>
-      <Text style={styles.text}>And simple</Text>
-    </View>
-  </Swiper>
+const ArticleScene = () =>
+  <View style={styles.wrapper}>
+    <Article>
+      <H1>大标题</H1>
+      <Section>
+        <H2>章标题</H2>
+        <Section>
+          <H3>小标题</H3>
+          <P>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute
+          </P>
+          <P>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute
+          </P>
+        </Section>
+      </Section>
+    </Article>
+  </View>
 
-export default SwiperScene
+export default ArticleScene

@@ -47,6 +47,6 @@ export default class Grid extends Component {
 Grid.propTypes = {
   label: PropTypes.string,
   icon: PropTypes.any,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
   children: PropTypes.node,
 }

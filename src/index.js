@@ -13,6 +13,7 @@ import {
 import { Icon } from './Icon'
 import { Toast } from './Toast'
 import { Msg } from './Msg'
+import { Article, Section, H1, H2, H3, P } from './Article'
 
 module.exports = {
   Button, ButtonArea,
@@ -21,4 +22,5 @@ module.exports = {
   Icon,
   Toast,
   Msg,
+  Article, Section, H1, H2, H3, P
 }

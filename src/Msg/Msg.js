@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react'
 import {
   View,
-  Text,
   StyleSheet,
   Dimensions
 } from 'react-native'
 import { Button, ButtonArea } from '../Button'
 import { Icon } from '../Icon'
+import Text from '../Text'
 import $V from '../variable'
 
 const styles = StyleSheet.create({
