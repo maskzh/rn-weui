@@ -2,60 +2,65 @@ import React from 'react'
 import {
   StyleSheet,
   View,
-  Text
+  Image,
 } from 'react-native'
-import Swiper from 'react-native-swiper'
+import {
+  Media,
+  MediaHeader,
+  MediaBody,
+  MediaTitle,
+  MediaDescription,
+  MediaInfo,
+  MediaInfoMeta,
+  MediaInfoMetaExtra,
+} from '../../../src'
 
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    marginTop: 44,
-  },
-  slide: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  },
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
-  image: {
-    flex: 1,
+    marginTop: 64,
+    backgroundColor: '#fbf9fe',
   }
 })
 
 
-const SwiperScene = () =>
-  <Swiper style={styles.wrapper} height={300} autoplay={!false}>
-    <View style={styles.slide1}>
-      <Text style={styles.text}>Hello Swiper</Text>
-    </View>
-    <View style={styles.slide2}>
-      <Text style={styles.text}>Beautiful</Text>
-    </View>
-    <View style={styles.slide3}>
-      <Text style={styles.text}>And simple</Text>
-    </View>
-  </Swiper>
+const PanelScene = () =>
+  <View style={styles.wrapper}>
+    <Media type="appmsg" onPress={() => {}}>
+      <MediaHeader>
+        <Image source={{ uri: 'http://weui.github.io/weui/images/icon_nav_button.png' }} />
+      </MediaHeader>
+      <MediaBody>
+        <MediaTitle>标题一</MediaTitle>
+        <MediaDescription>由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</MediaDescription>
+      </MediaBody>
+    </Media>
+    <Media type="appmsg">
+      <MediaHeader>
+        <Image source={{ uri: 'http://weui.github.io/weui/images/icon_nav_button.png' }} />
+      </MediaHeader>
+      <MediaBody>
+        <MediaTitle>标题一</MediaTitle>
+        <MediaDescription>由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</MediaDescription>
+      </MediaBody>
+    </Media>
+    <Media type="text" onPress={() => {}}>
+      <MediaTitle style={{ marginBottom: 8 }}>标题一</MediaTitle>
+      <MediaDescription>由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</MediaDescription>
+    </Media>
+    <Media type="text" onPress={() => {}}>
+      <MediaTitle style={{ marginBottom: 8 }}>标题一</MediaTitle>
+      <MediaDescription>由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</MediaDescription>
+    </Media>
+    <Media type="text" onPress={() => {}}>
+      <MediaTitle style={{ marginBottom: 8 }}>标题一</MediaTitle>
+      <MediaDescription>由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</MediaDescription>
+      <MediaInfo>
+        <MediaInfoMeta>文字来源</MediaInfoMeta>
+        <MediaInfoMeta>时间</MediaInfoMeta>
+        <MediaInfoMetaExtra>其他信息</MediaInfoMetaExtra>
+      </MediaInfo>
+    </Media>
+  </View>
 
-export default SwiperScene
+export default PanelScene

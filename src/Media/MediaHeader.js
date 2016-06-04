@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import {
   View,
   StyleSheet,
+  Image,
 } from 'react-native'
 import $V from '../variable'
 
@@ -10,8 +11,8 @@ const styles = StyleSheet.create({
     marginRight: $V.baseFontSize * 0.8,
     width: 60,
     height: 60,
-    lineHeight: 60,
-    textAlign: 'center',
+    // lineHeight: 60,
+    // textAlign: 'center',
   },
   mediaAppmsgThumb: {
     width: 60,
@@ -27,7 +28,7 @@ const MediaHeader = (props) => {
   } = props
 
   const childrenWithProps = React.Children.map(children, child => {
-    if (child.type === 'Image' && !child.props.style) {
+    if (child.type.displayName === 'Image' && !child.props.style) {
       return React.cloneElement(child, { style: styles.mediaAppmsgThumb })
     }
     return child

@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 import {
-  View,
   StyleSheet,
   Text as RNText
 } from 'react-native'
@@ -18,9 +17,7 @@ const Text = (props) => {
   const lineHeight = styleObj.lineHeight || fontSize * 1.6
 
   return (
-    <View style={{ justifyContent: 'center' }}>
-      <RNText style={[style, { fontSize, lineHeight }]} {...others}>{children}</RNText>
-    </View>
+    <RNText style={[style, { fontSize, lineHeight }]} {...others}>{children}</RNText>
   )
 }
 

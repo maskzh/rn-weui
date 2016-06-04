@@ -5,6 +5,7 @@ import MediaTitle from './MediaTitle'
 import MediaDescription from './MediaDesc'
 import MediaInfo from './MediaInfo'
 import MediaInfoMeta from './MediaInfoMeta'
+import MediaInfoMetaExtra from './MediaInfoMetaExtra'
 
 module.exports = {
   Media,
@@ -14,4 +15,5 @@ module.exports = {
   MediaDescription,
   MediaInfo,
   MediaInfoMeta,
+  MediaInfoMetaExtra
 }

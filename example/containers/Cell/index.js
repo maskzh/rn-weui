@@ -54,22 +54,22 @@ const CellScene = () =>
     <Cells>
       <Cell onPress={() => {}} style={S.bt0}>
         <CellBody><CellText>标题文字</CellText></CellBody>
-        <CellFooter access={!false} />
+        <CellFooter access />
       </Cell>
       <Cell onPress={() => {}}>
         <CellBody><CellText>标题文字</CellText></CellBody>
-        <CellFooter access={!false} />
+        <CellFooter access />
       </Cell>
     </Cells>
     <CellsTitle>带说明、跳转的列表项</CellsTitle>
     <Cells>
       <Cell onPress={() => {}} style={S.bt0}>
         <CellBody><CellText>标题文字</CellText></CellBody>
-        <CellFooter access={!false}>说明文字</CellFooter>
+        <CellFooter access>说明文字</CellFooter>
       </Cell>
       <Cell onPress={() => {}}>
         <CellBody><CellText>标题文字</CellText></CellBody>
-        <CellFooter access={!false}>说明文字</CellFooter>
+        <CellFooter access>说明文字</CellFooter>
       </Cell>
     </Cells>
     <CellsTips>说明</CellsTips>
