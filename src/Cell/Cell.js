@@ -8,7 +8,7 @@ import V from '../variable'
 
 const styles = StyleSheet.create({
   cell: {
-    borderTopWidth: 0.5,
+    borderTopWidth: StyleSheet.hairlineWidth,
     borderColor: V.weuiCellBorderColor,
     paddingTop: V.weuiCellGapV,
     paddingBottom: V.weuiCellGapV,

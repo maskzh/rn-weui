@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     paddingBottom: 20,
     paddingLeft: 10,
-    borderRightWidth: 0.5,
-    borderBottomWidth: 0.5,
+    borderRightWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: V.weuiGridBorderColor,
-    width: (Dimensions.get('window').width - 0.5) / 3
+    width: (Dimensions.get('window').width - StyleSheet.hairlineWidth) / 3
   }
 })
 

@@ -3,30 +3,31 @@ import {
   View,
   StyleSheet
 } from 'react-native'
-import V from '../variable'
 
+const lineColor = '#E5E5E5'
 const styles = StyleSheet.create({
-  cells: {
-    marginTop: V.weuiCellssMarginTop,
-    backgroundColor: V.weuiCellBg,
+  panel: {
+    backgroundColor: '#fff',
+    marginTop: 10,
     overflow: 'hidden',
-    borderTopWidth: 0.5,
-    borderBottomWidth: 0.5,
-    borderColor: V.weuiCellBorderColor
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderStyle: 'solid',
+    borderColor: lineColor,
   }
 })
-const Cells = (props) => {
+const Panel = (props) => {
   const { children, style, ...others } = props
   return (
-    <View style={[styles.cells, style]} {...others}>
+    <View style={[styles.panel, style]} {...others} >
       {children}
     </View>
   )
 }
-Cells.propTypes = {
+Panel.propTypes = {
   children: PropTypes.node,
   style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
   others: PropTypes.object
 }
 
-export default Cells
+export default Panel

@@ -15,6 +15,12 @@ import { Toast } from './Toast'
 import { Msg } from './Msg'
 import { Article, Section, H1, H2, H3, P } from './Article'
 import {
+  Panel,
+  PanelHeader,
+  PanelBody,
+  PanelFooter,
+} from './Panel'
+import {
   Media,
   MediaHeader,
   MediaBody,
@@ -35,4 +41,5 @@ module.exports = {
   Article, Section, H1, H2, H3, P,
   Media, MediaHeader, MediaBody, MediaTitle, MediaDescription, MediaInfo,
   MediaInfoMeta, MediaInfoMetaExtra,
+  Panel, PanelHeader, PanelBody, PanelFooter,
 }

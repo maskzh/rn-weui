@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   // global
   button: {
     borderRadius: V.weuiBtnBorderRadius,
-    borderWidth: 0.5,
+    borderWidth: StyleSheet.hairlineWidth,
     paddingLeft: 14,
     paddingRight: 14,
     borderColor: 'rgba(0,0,0,0.2)',

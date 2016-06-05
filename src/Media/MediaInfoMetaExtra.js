@@ -8,7 +8,7 @@ import {
 const styles = StyleSheet.create({
   mediaInfoMetaExtra: {
     paddingLeft: 13 * 1,
-    borderLeftWidth: 0.5,
+    borderLeftWidth: StyleSheet.hairlineWidth,
     borderStyle: 'solid',
     borderColor: '#CECECE',
   },

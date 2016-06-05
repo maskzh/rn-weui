@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
     marginTop: V.weuiCellssMarginTop,
     backgroundColor: V.weuiCellBg,
     overflow: 'hidden',
-    borderTopWidth: 0.5,
-    borderBottomWidth: 0.5,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: V.weuiCellBorderColor
   }
 })

@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     paddingRight: 15,
     marginLeft: 15,
-    borderTopWidth: 0.5,
+    borderTopWidth: StyleSheet.hairlineWidth,
     borderStyle: 'solid',
     borderColor: lineColor,
   },
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
   // small_appmsg
   small_appmsgMedia: {
     padding: 0,
+    marginLeft: 0,
   },
 })
 

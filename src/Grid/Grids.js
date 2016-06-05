@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     overflow: 'hidden',
-    borderTopWidth: 0.5,
-    borderLeftWidth: 0.5,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderLeftWidth: StyleSheet.hairlineWidth,
     borderColor: V.weuiGridBorderColor,
   }
 })
