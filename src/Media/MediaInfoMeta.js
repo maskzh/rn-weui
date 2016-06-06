@@ -39,7 +39,7 @@ const MediaInfoMeta = (props) => {
 
 MediaInfoMeta.propTypes = {
   extra: PropTypes.bool,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: Text.propTypes.style,
   children: PropTypes.node,
 }
 

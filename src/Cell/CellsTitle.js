@@ -18,7 +18,7 @@ const CellsTitle = (props) => {
 }
 CellsTitle.propTypes = {
   children: PropTypes.node,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: Text.propTypes.style,
   others: PropTypes.object
 }
 

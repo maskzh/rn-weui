@@ -19,7 +19,7 @@ const Article = (props) =>
   </ScrollView>
 
 Article.propTypes = {
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: ScrollView.propTypes.style,
   children: PropTypes.node
 }
 

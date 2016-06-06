@@ -4,16 +4,20 @@ import V from '../variable'
 
 const styles = StyleSheet.create({
   cellFooter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  cellFooterText: {
     textAlign: 'center',
     color: V.globalTextColor,
     fontSize: V.weuiCellFontSize
-  }
+  },
 })
 const CellFooter = (props) => {
   const { children, style, access, ...others } = props
   return (
-    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-      <Text style={[styles.cellFooter, style]} {...others}>
+    <View style={styles.cellFooter}>
+      <Text style={[styles.cellFooterText, style]} {...others}>
         {children}
       </Text>
       {access ?
@@ -26,7 +30,7 @@ const CellFooter = (props) => {
 CellFooter.propTypes = {
   access: PropTypes.bool,
   children: PropTypes.node,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: Text.propTypes.style,
   others: PropTypes.object
 }
 

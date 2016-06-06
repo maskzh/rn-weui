@@ -59,7 +59,7 @@ const Media = (props) => {
 
 Media.propTypes = {
   type: PropTypes.oneOf(['text', 'appmsg', 'small_appmsg']),
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: View.propTypes.style,
   children: PropTypes.node
 }
 

@@ -7,7 +7,7 @@ const CellHeader = (props) => {
 }
 CellHeader.propTypes = {
   children: PropTypes.node,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: View.propTypes.style,
   others: PropTypes.object
 }
 

@@ -39,7 +39,7 @@ const MediaHeader = (props) => {
 }
 
 MediaHeader.propTypes = {
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: View.propTypes.style,
   children: PropTypes.node,
 }
 

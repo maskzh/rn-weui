@@ -57,6 +57,7 @@ const Toast = (props) => {
     onShow,
     onRequestClose,
     style,
+    textStyle,
     children
   } = props
 
@@ -71,7 +72,7 @@ const Toast = (props) => {
       <View style={[styles.toastWrapper]}>
         <View style={[styles.toast, style]}>
           {icon === 'loading' ? renderLoading() : <Icon name={icon} style={[styles.toastIcon]} />}
-          <Text style={[styles.toastContent]}>{children}</Text>
+          <Text style={[styles.toastContent, textStyle]}>{children}</Text>
         </View>
       </View>
     </Modal>
@@ -83,7 +84,8 @@ Toast.propTypes = {
   show: PropTypes.bool,
   onShow: PropTypes.func,
   onRequestClose: PropTypes.func,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: View.propTypes.style,
+  textStyle: Text.propTypes.style,
   children: PropTypes.node
 }
 

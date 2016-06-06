@@ -95,11 +95,10 @@ const Button = (props) => {
 
   return (
     <TouchableHighlight
-      style={[styles.button, ...buttonStyles, style]}
       underlayColor={underlayColor}
       {...touchableProps}
     >
-      <View>
+      <View style={[styles.button, ...buttonStyles, style]}>
         <ButtonText {...{ type, plain, size, disabled }}>{children}</ButtonText>
       </View>
     </TouchableHighlight>
@@ -115,7 +114,7 @@ Button.propTypes = {
   onPressIn: PropTypes.func,
   onPressOut: PropTypes.func,
   onLongPress: PropTypes.func,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: TouchableHighlight.propTypes.style,
   children: PropTypes.node,
 }
 

@@ -1,14 +1,15 @@
 import React, { PropTypes } from 'react'
 import {
+  Text,
   StyleSheet,
 } from 'react-native'
-import Text from '../Text'
 
 const styles = StyleSheet.create({
   h1: {
     fontSize: 17,
     fontWeight: '400',
     marginBottom: 17 * 0.75,
+    lineHeight: 17 * 1.6,
   }
 })
 
@@ -18,7 +19,7 @@ const H1 = (props) =>
   </Text>
 
 H1.propTypes = {
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: Text.propTypes.style,
   children: PropTypes.node
 }
 

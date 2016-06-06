@@ -31,7 +31,7 @@ const Cells = (props) => {
 }
 Cells.propTypes = {
   children: PropTypes.node,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: View.propTypes.style,
   others: PropTypes.object
 }
 

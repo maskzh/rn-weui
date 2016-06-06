@@ -30,6 +30,7 @@ import {
   MediaInfoMeta,
 } from './Media'
 import { Progress } from './Progress'
+import { Tab } from './Tab'
 
 module.exports = {
   Button, ButtonArea,
@@ -42,4 +43,5 @@ module.exports = {
   Media, MediaHeader, MediaBody, MediaTitle, MediaDescription, MediaInfo, MediaInfoMeta,
   Panel, PanelHeader, PanelBody, PanelFooter,
   Progress,
+  Tab,
 }

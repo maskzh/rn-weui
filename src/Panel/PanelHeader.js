@@ -24,16 +24,17 @@ const styles = StyleSheet.create({
 })
 
 const PanelHeader = (props) => {
-  const { children, style, ...others } = props
+  const { children, style, textStyle, ...others } = props
   return (
     <View style={[styles.panelHeader, style]} {...others}>
-      <Text style={[styles.panelHeaderText]}>{children}</Text>
+      <Text style={[styles.panelHeaderText, textStyle]}>{children}</Text>
     </View>
   )
 }
 PanelHeader.propTypes = {
   children: PropTypes.node,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: View.propTypes.style,
+  textStyle: Text.propTypes.style,
   others: PropTypes.object
 }
 

@@ -1,28 +1,18 @@
 import React from 'react'
 import { Text, ScrollView } from 'react-native'
+import { Tab } from '../../../src'
+// import Page from '../../components/Page'
 
-import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view'
+const TabScene = () =>
+  <Tab style={{ marginTop: 64, backgroundColor: '#fbf9fe' }}>
+    <ScrollView tabLabel="我的"><Text>My</Text></ScrollView>
+    <Text tabLabel="最爱">favorite</Text>
+    <Text tabLabel="项目">project</Text>
+    <Text tabLabel="喜欢">favorite</Text>
+    <Text tabLabel="其他">project</Text>
+    <Text tabLabel="其他1">project</Text>
+    <Text tabLabel="其他2">project</Text>
+    <Text tabLabel="其他3">project</Text>
+  </Tab>
 
-const Tab = () =>
-  <ScrollableTabView
-    style={{ paddingTop: 64, backgroundColor: '#fbf9fe' }}
-    renderTabBar={() => <DefaultTabBar backgroundColor="rgba(255, 255, 255, 0.7)" />}
-    tabBarPosition="overlayTop"
-  >
-    <ScrollView tabLabel="iOS">
-      <Text tabLabel="Tab #1">My</Text>
-      <Text tabLabel="Tab #2 word word">favorite</Text>
-      <Text tabLabel="Tab #3 word word word">project</Text>
-      <Text tabLabel="Tab #4 word word word word">favorite</Text>
-      <Text tabLabel="Tab #5">project</Text>
-    </ScrollView>
-    <ScrollView tabLabel="Android">
-      <Text tabLabel="Tab #1">My</Text>
-      <Text tabLabel="Tab #2 word word">favorite</Text>
-      <Text tabLabel="Tab #3 word word word">project</Text>
-      <Text tabLabel="Tab #4 word word word word">favorite</Text>
-      <Text tabLabel="Tab #5">project</Text>
-    </ScrollView>
-  </ScrollableTabView>
-
-export default Tab
+export default TabScene

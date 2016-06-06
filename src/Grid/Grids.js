@@ -44,6 +44,6 @@ export default class Grids extends Component {
 
 Grids.propTypes = {
   data: PropTypes.array,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: View.propTypes.style,
   children: PropTypes.node,
 }

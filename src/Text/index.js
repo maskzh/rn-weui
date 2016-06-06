@@ -22,7 +22,7 @@ const Text = (props) => {
 }
 
 Text.propTypes = {
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: Text.propTypes.style,
   children: PropTypes.node
 }
 

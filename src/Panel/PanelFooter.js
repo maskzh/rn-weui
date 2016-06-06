@@ -48,7 +48,7 @@ const PanelFooter = (props) => {
 PanelFooter.propTypes = {
   access: PropTypes.bool,
   children: PropTypes.node,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: Text.propTypes.style,
   others: PropTypes.object
 }
 

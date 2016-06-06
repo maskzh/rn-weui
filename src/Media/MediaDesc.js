@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import {
+  Text,
   StyleSheet
 } from 'react-native'
-import Text from '../Text'
 
 const styles = StyleSheet.create({
   mediaDesc: {
@@ -26,7 +26,7 @@ const MediaDesc = (props) => {
 }
 
 MediaDesc.propTypes = {
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: Text.propTypes.style,
   children: PropTypes.node,
 }
 

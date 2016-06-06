@@ -43,6 +43,6 @@ export default class ButtonArea extends Component {
 
 ButtonArea.propTypes = {
   direction: PropTypes.oneOf(['horizontal', 'vertical']),
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: View.propTypes.style,
   children: PropTypes.node,
 }

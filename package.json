@@ -36,7 +36,6 @@
     "react-native": "^0.25.1",
     "react-native-blur": "^0.7.11",
     "react-native-overlay": "^0.4.2",
-    "react-native-scrollable-tab-view": "^0.4.3",
     "react-native-stylekit": "0.0.3",
     "react-native-swiper": "^1.4.3",
     "react-native-vector-icons": "^2.0.3",
@@ -64,6 +63,7 @@
   "dependencies": {
     "lodash.wrap": "^4.0.0",
     "react": "^15.1.0",
-    "react-native": "^0.26.3"
+    "react-native": "^0.26.3",
+    "react-native-scrollable-tab-view": "^0.4.3"
   }
 }

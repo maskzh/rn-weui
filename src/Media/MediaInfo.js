@@ -3,7 +3,6 @@ import {
   View,
   StyleSheet
 } from 'react-native'
-// import Text from '../Text'
 
 const styles = StyleSheet.create({
   mediaInfo: {
@@ -29,7 +28,7 @@ const MediaInfo = (props) => {
 }
 
 MediaInfo.propTypes = {
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: View.propTypes.style,
   children: PropTypes.node,
 }
 

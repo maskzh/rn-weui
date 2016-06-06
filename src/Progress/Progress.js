@@ -77,7 +77,7 @@ class Progress extends Component {
 Progress.propTypes = {
   value: PropTypes.number,
   onCancel: PropTypes.func,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: View.propTypes.style,
 }
 
 export default Progress

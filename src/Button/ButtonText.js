@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react'
 import {
   StyleSheet,
   Text,
-  View,
 } from 'react-native'
 import $V from '../variable'
 
@@ -83,9 +82,7 @@ const ButtonText = (props) => {
   const textStyles = getTextStyles({ type, plain, size, disabled })
 
   return (
-    <View style={{ justifyContent: 'center' }}>
-      <Text style={[styles.text, ...textStyles, style]}>{children}</Text>
-    </View>
+    <Text style={[styles.text, ...textStyles, style]}>{children}</Text>
   )
 }
 
@@ -94,7 +91,7 @@ ButtonText.propTypes = {
   size: PropTypes.oneOf(['small']),
   plain: PropTypes.bool,
   disabled: PropTypes.bool,
-  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object, PropTypes.number]),
+  style: Text.propTypes.style,
   children: PropTypes.node,
 }
 
