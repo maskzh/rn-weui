@@ -6,7 +6,17 @@ const styles = StyleSheet.create({
 })
 const PanelBody = (props) => {
   const { children, style, ...others } = props
-  return <View style={[styles.panelBody, styles.cellPrimay, style]} {...others}>{children}</View>
+  const childrenWithProps = React.Children.map(children, (child, idx) => {
+    if (idx === 0) {
+      return React.cloneElement(child, { style: { borderTopWidth: 0 } })
+    }
+    return child
+  })
+  return (
+    <View style={[styles.panelBody, styles.cellPrimay, style]} {...others}>
+      {childrenWithProps}
+    </View>
+  )
 }
 PanelBody.propTypes = {
   children: PropTypes.node,

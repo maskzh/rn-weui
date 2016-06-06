@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react'
 import {
   View,
   StyleSheet,
-  Image,
 } from 'react-native'
 import $V from '../variable'
 

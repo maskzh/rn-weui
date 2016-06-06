@@ -14,7 +14,6 @@ import {
   CellFooter,
   CellText
 } from '../../../src'
-import S from 'react-native-stylekit'
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -28,14 +27,14 @@ const CellScene = () =>
   <View style={styles.wrapper}>
     <CellsTitle>带说明的列表项</CellsTitle>
     <Cells>
-      <Cell style={S.bt0}>
+      <Cell>
         <CellBody><CellText>标题文字</CellText></CellBody>
         <CellFooter>说明文字</CellFooter>
       </Cell>
     </Cells>
     <CellsTitle>带图标、说明的列表项</CellsTitle>
     <Cells>
-      <Cell style={S.bt0}>
+      <Cell>
         <CellHeader>
           <Image style={{ width: 24, height: 24, marginRight: 5 }} source={{ uri: 'http://weui.github.io/weui/images/icon_nav_button.png' }} />
         </CellHeader>
@@ -52,7 +51,7 @@ const CellScene = () =>
     </Cells>
     <CellsTitle>带跳转的列表项</CellsTitle>
     <Cells>
-      <Cell onPress={() => {}} style={S.bt0}>
+      <Cell onPress={() => {}}>
         <CellBody><CellText>标题文字</CellText></CellBody>
         <CellFooter access />
       </Cell>
@@ -63,7 +62,7 @@ const CellScene = () =>
     </Cells>
     <CellsTitle>带说明、跳转的列表项</CellsTitle>
     <Cells>
-      <Cell onPress={() => {}} style={S.bt0}>
+      <Cell onPress={() => {}}>
         <CellBody><CellText>标题文字</CellText></CellBody>
         <CellFooter access>说明文字</CellFooter>
       </Cell>

@@ -40,12 +40,19 @@ const Media = (props) => {
     ...others
   } = props
 
+  const childrenWithProps = React.Children.map(children, child => {
+    if (child.type.name === 'MediaTitle') {
+      return React.cloneElement(child, { style: { marginBottom: 8 } })
+    }
+    return child
+  })
+
   return (
     <TouchableHighlight
       underlayColor={underlayColor}
       {...others}
     >
-      <View style={[styles.media, styles[`${type}Media`] || {}, style]}>{children}</View>
+      <View style={[styles.media, styles[`${type}Media`] || {}, style]}>{childrenWithProps}</View>
     </TouchableHighlight>
   )
 }

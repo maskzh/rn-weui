@@ -4,8 +4,8 @@ import V from '../variable'
 
 const styles = StyleSheet.create({
   cellsTitle: {
-    marginTop: V.weuiCellTipsFontSize * 0.77,
-    marginBottom: V.weuiCellTipsFontSize * 0.3,
+    marginTop: V.weuiCellTipsFontSize * 0.77 + (14 * 1.6 - 14) * 0.5,
+    marginBottom: V.weuiCellTipsFontSize * 0.3 + (14 * 1.6 - 14) * 0.5,
     paddingLeft: V.weuiCellGapH,
     paddingRight: V.weuiCellGapH,
     fontSize: V.weuiCellTipsFontSize,

@@ -16,14 +16,12 @@ import {
   MediaDescription,
   MediaInfo,
   MediaInfoMeta,
-  MediaInfoMetaExtra,
   Cell,
   CellHeader,
   CellBody,
   CellFooter,
   CellText,
 } from '../../../src'
-import $S from 'react-native-stylekit'
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -39,7 +37,7 @@ const PanelScene = () =>
     <Panel>
       <PanelHeader>图文组合列表</PanelHeader>
       <PanelBody>
-        <Media type="appmsg" style={[$S.bt0]}>
+        <Media type="appmsg">
           <MediaHeader>
             <Image source={{ uri: 'http://weui.github.io/weui/images/icon_nav_button.png' }} />
           </MediaHeader>
@@ -64,12 +62,12 @@ const PanelScene = () =>
     <Panel>
       <PanelHeader>文字组合列表</PanelHeader>
       <PanelBody>
-        <Media type="text" style={[$S.bt0]} onPress={() => {}}>
-          <MediaTitle style={{ marginBottom: 8 }}>标题一</MediaTitle>
+        <Media type="text" onPress={() => {}}>
+          <MediaTitle>标题一</MediaTitle>
           <MediaDescription>由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</MediaDescription>
         </Media>
         <Media type="text" onPress={() => {}}>
-          <MediaTitle style={{ marginBottom: 8 }}>标题一</MediaTitle>
+          <MediaTitle>标题一</MediaTitle>
           <MediaDescription>由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</MediaDescription>
         </Media>
       </PanelBody>
@@ -79,7 +77,7 @@ const PanelScene = () =>
     <Panel>
       <PanelHeader>小图文组合列表</PanelHeader>
       <PanelBody>
-        <Cell style={[$S.bt0]} onPress={() => {}}>
+        <Cell onPress={() => {}}>
           <CellHeader>
             <Image style={{ width: 24, height: 24, marginRight: 5 }} source={{ uri: 'http://weui.github.io/weui/images/icon_nav_button.png' }} />
           </CellHeader>
@@ -99,13 +97,13 @@ const PanelScene = () =>
     <Panel>
       <PanelHeader>文字列表附来源</PanelHeader>
       <PanelBody>
-        <Media type="text" style={[$S.bt0]}>
-          <MediaTitle style={{ marginBottom: 8 }}>标题一</MediaTitle>
+        <Media type="text">
+          <MediaTitle>标题一</MediaTitle>
           <MediaDescription>由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</MediaDescription>
           <MediaInfo>
             <MediaInfoMeta>文字来源</MediaInfoMeta>
             <MediaInfoMeta>时间</MediaInfoMeta>
-            <MediaInfoMetaExtra>其他信息</MediaInfoMetaExtra>
+            <MediaInfoMeta extra>其他信息</MediaInfoMeta>
           </MediaInfo>
         </Media>
       </PanelBody>

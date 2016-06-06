@@ -28,7 +28,6 @@ import {
   MediaDescription,
   MediaInfo,
   MediaInfoMeta,
-  MediaInfoMetaExtra
 } from './Media'
 
 module.exports = {
@@ -39,7 +38,6 @@ module.exports = {
   Toast,
   Msg,
   Article, Section, H1, H2, H3, P,
-  Media, MediaHeader, MediaBody, MediaTitle, MediaDescription, MediaInfo,
-  MediaInfoMeta, MediaInfoMetaExtra,
+  Media, MediaHeader, MediaBody, MediaTitle, MediaDescription, MediaInfo, MediaInfoMeta,
   Panel, PanelHeader, PanelBody, PanelFooter,
 }

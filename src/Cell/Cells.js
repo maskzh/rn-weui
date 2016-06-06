@@ -17,9 +17,15 @@ const styles = StyleSheet.create({
 })
 const Cells = (props) => {
   const { children, style, ...others } = props
+  const childrenWithProps = React.Children.map(children, (child, idx) => {
+    if (idx === 0) {
+      return React.cloneElement(child, { style: { borderTopWidth: 0 } })
+    }
+    return child
+  })
   return (
     <View style={[styles.cells, style]} {...others}>
-      {children}
+      {childrenWithProps}
     </View>
   )
 }
