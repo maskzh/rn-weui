@@ -29,6 +29,7 @@ import {
   MediaInfo,
   MediaInfoMeta,
 } from './Media'
+import { Progress } from './Progress'
 
 module.exports = {
   Button, ButtonArea,
@@ -40,4 +41,5 @@ module.exports = {
   Article, Section, H1, H2, H3, P,
   Media, MediaHeader, MediaBody, MediaTitle, MediaDescription, MediaInfo, MediaInfoMeta,
   Panel, PanelHeader, PanelBody, PanelFooter,
+  Progress,
 }

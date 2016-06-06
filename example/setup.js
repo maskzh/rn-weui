@@ -42,11 +42,4 @@ function setup(): Component {
   return Root
 }
 
-global.log = (...args) => {
-  console.log('/------------------------------\\')
-  console.log(...args)
-  console.log('\\------------------------------/')
-  return args[args.length - 1]
-}
-
 export default setup

@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   StyleSheet,
+  ScrollView,
   View,
 } from 'react-native'
 import { Icon } from '../../../src'
@@ -16,8 +17,8 @@ const styles = StyleSheet.create({
 
 
 const SwiperScene = () =>
-  <View style={[styles.wrapper]}>
-    <View style={[SK.row, SK.center, SK.plr50]}>
+  <ScrollView style={[styles.wrapper]}>
+    <View style={[SK.row, SK.center, SK.plr30]}>
       <Icon name="success" msg style={[SK.plr5]} />
       <Icon name="info" msg style={[SK.plr10]} />
       <Icon name="warn" msg style={[SK.plr10]} />
@@ -25,7 +26,7 @@ const SwiperScene = () =>
       <Icon name="safe_success" msg style={[SK.plr10]} />
       <Icon name="safe_warn" msg style={[SK.plr10]} />
     </View>
-    <View style={[SK.row, SK.plr50]}>
+    <View style={[SK.row, SK.plr30]}>
       <Icon name="success" style={[SK.plr5]} />
       <Icon name="success_circle" style={[SK.plr5]} />
       <Icon name="success_no_circle" style={[SK.plr5]} />
@@ -40,6 +41,6 @@ const SwiperScene = () =>
       <Icon name="search" style={[SK.plr5]} />
       <Icon name="clear" style={[SK.plr5]} />
     </View>
-  </View>
+  </ScrollView>
 
 export default SwiperScene

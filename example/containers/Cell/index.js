@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   StyleSheet,
-  View,
+  ScrollView,
   Image,
 } from 'react-native'
 import {
@@ -18,13 +18,13 @@ import {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    marginTop: 84,
+    marginTop: 64,
     backgroundColor: '#fbf9fe',
   },
 })
 
 const CellScene = () =>
-  <View style={styles.wrapper}>
+  <ScrollView style={styles.wrapper}>
     <CellsTitle>带说明的列表项</CellsTitle>
     <Cells>
       <Cell>
@@ -72,6 +72,6 @@ const CellScene = () =>
       </Cell>
     </Cells>
     <CellsTips>说明</CellsTips>
-  </View>
+  </ScrollView>
 
 export default CellScene

@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   StyleSheet,
-  View,
+  ScrollView,
 } from 'react-native'
 import { ButtonArea, Button } from '../../../src'
 import S from 'react-native-stylekit'
@@ -9,13 +9,13 @@ import S from 'react-native-stylekit'
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    marginTop: 74,
+    marginTop: 64,
     backgroundColor: '#fbf9fe',
   },
 })
 
 const ButtonScene = () =>
-  <View style={styles.wrapper}>
+  <ScrollView style={styles.wrapper}>
     <ButtonArea>
       <Button type="primary" onPress={() => {}} style={S.mt15}>按钮</Button>
       <Button type="primary" disabled onPress={() => {}} style={S.mt15}>按钮</Button>
@@ -39,6 +39,6 @@ const ButtonScene = () =>
       <Button type="primary" size="small" onPress={() => {}}>按钮</Button>
       <Button size="small" onPress={() => {}}>按钮</Button>
     </ButtonArea>
-  </View>
+  </ScrollView>
 
 export default ButtonScene

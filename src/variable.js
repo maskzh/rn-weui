@@ -3,6 +3,7 @@ import _button from './Button/variable'
 import _grid from './Grid/variable'
 import _cell from './Cell/variable'
 import _msg from './Msg/variable'
+import _progress from './Progress/variable'
 
 const _global = {
   baseFontSize: 16,
@@ -41,4 +42,5 @@ export default merge(
   _grid,
   _cell,
   _msg,
+  _progress,
 )

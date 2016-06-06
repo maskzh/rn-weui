@@ -1,61 +1,46 @@
-import React from 'react'
-import {
-  StyleSheet,
-  View,
-  Text
-} from 'react-native'
-import Swiper from 'react-native-swiper'
+import React, { Component } from 'react'
+import { Progress, Button, ButtonArea } from '../../../src'
+import Page from '../../components/Page'
+import $SK from 'react-native-stylekit'
 
-const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    marginTop: 44,
-  },
-  slide: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  },
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
-  image: {
-    flex: 1,
+class ProgressScene extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: 0,
+      timer: null,
+      isUploading: false,
+    }
+    this.start = this.start.bind(this)
+    this.pause = this.pause.bind(this)
   }
-})
-
-
-const SwiperScene = () =>
-  <Swiper style={styles.wrapper} height={300} autoplay={!false}>
-    <View style={styles.slide1}>
-      <Text style={styles.text}>Hello Swiper</Text>
-    </View>
-    <View style={styles.slide2}>
-      <Text style={styles.text}>Beautiful</Text>
-    </View>
-    <View style={styles.slide3}>
-      <Text style={styles.text}>And simple</Text>
-    </View>
-  </Swiper>
-
-export default SwiperScene
+  componentWillUnmount() {
+    if (this.state.timer) clearInterval(this.state.timer)
+  }
+  start() {
+    if (this.state.isUploading) return
+    this.state.isUploading = true
+    this.upload()
+  }
+  pause() {
+    this.setState({ isUploading: false })
+  }
+  upload() {
+    if (!this.state.isUploading) return
+    this.setState({ value: ++this.state.value % 100 })
+    this.state.timer = setTimeout(this.upload.bind(this), 20)
+  }
+  render() {
+    return (
+      <Page spacing>
+        <Progress value={this.state.value || 0} onCancel={this.pause} style={[$SK.mt15]} />
+        <Progress value={this.state.value || 50} onCancel={this.pause} style={[$SK.mt15]} />
+        <Progress value={this.state.value || 80} onCancel={this.pause} style={[$SK.mt15]} />
+        <ButtonArea style={[$SK.mt15]}>
+          <Button type="primary" onPress={this.start}>上传</Button>
+        </ButtonArea>
+      </Page>
+    )
+  }
+}
+export default ProgressScene

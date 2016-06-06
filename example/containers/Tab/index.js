@@ -1,61 +1,28 @@
 import React from 'react'
-import {
-  StyleSheet,
-  View,
-  Text
-} from 'react-native'
-import Swiper from 'react-native-swiper'
+import { Text, ScrollView } from 'react-native'
 
-const styles = StyleSheet.create({
-  wrapper: {
-    flex: 1,
-    marginTop: 44,
-  },
-  slide: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  },
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
-  image: {
-    flex: 1,
-  }
-})
+import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view'
 
+const Tab = () =>
+  <ScrollableTabView
+    style={{ paddingTop: 64, backgroundColor: '#fbf9fe' }}
+    renderTabBar={() => <DefaultTabBar backgroundColor="rgba(255, 255, 255, 0.7)" />}
+    tabBarPosition="overlayTop"
+  >
+    <ScrollView tabLabel="iOS">
+      <Text tabLabel="Tab #1">My</Text>
+      <Text tabLabel="Tab #2 word word">favorite</Text>
+      <Text tabLabel="Tab #3 word word word">project</Text>
+      <Text tabLabel="Tab #4 word word word word">favorite</Text>
+      <Text tabLabel="Tab #5">project</Text>
+    </ScrollView>
+    <ScrollView tabLabel="Android">
+      <Text tabLabel="Tab #1">My</Text>
+      <Text tabLabel="Tab #2 word word">favorite</Text>
+      <Text tabLabel="Tab #3 word word word">project</Text>
+      <Text tabLabel="Tab #4 word word word word">favorite</Text>
+      <Text tabLabel="Tab #5">project</Text>
+    </ScrollView>
+  </ScrollableTabView>
 
-const SwiperScene = () =>
-  <Swiper style={styles.wrapper} height={300} autoplay={!false}>
-    <View style={styles.slide1}>
-      <Text style={styles.text}>Hello Swiper</Text>
-    </View>
-    <View style={styles.slide2}>
-      <Text style={styles.text}>Beautiful</Text>
-    </View>
-    <View style={styles.slide3}>
-      <Text style={styles.text}>And simple</Text>
-    </View>
-  </Swiper>
-
-export default SwiperScene
+export default Tab
