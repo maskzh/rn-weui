@@ -9,6 +9,7 @@
 ![Msg](http://elliott.b0.upaiyun.com/img/a074f60ff3!sm)
 ![Panel](http://elliott.b0.upaiyun.com/img/cf3b622b9f!sm)
 ![Progress](http://elliott.b0.upaiyun.com/img/d1c2c9a277!sm)
+![Tab](http://elliott.b0.upaiyun.com/img/7a2f8c250d!sm)
 ### TODO
 - <s>Grid</s>
 - <s>Button</s>
@@ -18,11 +19,11 @@
 - <s>Icons</s>
 - <s>Panel</s>
 - <s>Progress</s>
-- Cell `ing`
+- <s>Tab</s>
 - ActionSheet
 - Dialog
-- Tab
 - SearchBar
+- Cell(表单部分)
 
 ### 安装
 ```shell
