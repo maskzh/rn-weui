@@ -8,25 +8,29 @@ import V from '../variable'
 
 const styles = StyleSheet.create({
   cell: {
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderColor: V.weuiCellBorderColor,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: V.weuiCellGapH,
     paddingTop: V.weuiCellGapV,
     paddingBottom: V.weuiCellGapV,
     paddingRight: V.weuiCellGapH,
-    marginLeft: V.weuiCellGapH,
-    flexDirection: 'row',
-    alignItems: 'center',
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderColor: V.weuiCellBorderColor,
+  },
+  firstCell: {
+    borderTopWidth: 0,
   }
 })
 const Cell = (props) => {
-  const { children, style, ...others } = props
+  const { first, children, style, ...others } = props
   return (
-    <TouchableHighlight underlayColor={V.itemActiveColor} {...others} >
-      <View style={[styles.cell, style]}>{children}</View>
+    <TouchableHighlight style={style} underlayColor={V.itemActiveColor} {...others} >
+      <View style={[styles.cell, first ? styles.firstCell : {}]}>{children}</View>
     </TouchableHighlight>
   )
 }
 Cell.propTypes = {
+  first: PropTypes.bool,
   children: PropTypes.node,
   style: View.propTypes.style,
   others: PropTypes.object

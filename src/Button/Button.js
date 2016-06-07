@@ -95,10 +95,11 @@ const Button = (props) => {
 
   return (
     <TouchableHighlight
+      style={[styles.button, ...buttonStyles, style]}
       underlayColor={underlayColor}
       {...touchableProps}
     >
-      <View style={[styles.button, ...buttonStyles, style]}>
+      <View>
         <ButtonText {...{ type, plain, size, disabled }}>{children}</ButtonText>
       </View>
     </TouchableHighlight>

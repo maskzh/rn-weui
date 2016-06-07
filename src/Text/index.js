@@ -14,7 +14,7 @@ const Text = (props) => {
 
   const styleObj = StyleSheet.flatten(style)
   const fontSize = styleObj.fontSize || $V.baseFontSize
-  const lineHeight = styleObj.lineHeight || fontSize * 1.6
+  const lineHeight = styleObj.lineHeight || fontSize * $V.baseLineHeight
 
   return (
     <RNText style={[style, { fontSize, lineHeight }]} {...others}>{children}</RNText>

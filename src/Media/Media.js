@@ -30,6 +30,10 @@ const styles = StyleSheet.create({
     padding: 0,
     marginLeft: 0,
   },
+
+  firstMedia: {
+    borderTopWidth: 0
+  }
 })
 
 const Media = (props) => {
@@ -37,6 +41,7 @@ const Media = (props) => {
     type,
     style,
     children,
+    first,
     ...others
   } = props
 
@@ -49,10 +54,13 @@ const Media = (props) => {
 
   return (
     <TouchableHighlight
+      style={style}
       underlayColor={underlayColor}
       {...others}
     >
-      <View style={[styles.media, styles[`${type}Media`] || {}, style]}>{childrenWithProps}</View>
+      <View
+        style={[styles.media, styles[`${type}Media`] || {}, first ? styles.firstMedia : {}]}
+      >{childrenWithProps}</View>
     </TouchableHighlight>
   )
 }
@@ -60,7 +68,8 @@ const Media = (props) => {
 Media.propTypes = {
   type: PropTypes.oneOf(['text', 'appmsg', 'small_appmsg']),
   style: View.propTypes.style,
-  children: PropTypes.node
+  children: PropTypes.node,
+  first: PropTypes.bool,
 }
 
 export default Media

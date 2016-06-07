@@ -57,6 +57,7 @@ const Toast = (props) => {
     onShow,
     onRequestClose,
     style,
+    wrapperStyle,
     textStyle,
     children
   } = props
@@ -69,7 +70,7 @@ const Toast = (props) => {
       onShow={onShow}
       onRequestClose={onRequestClose}
     >
-      <View style={[styles.toastWrapper]}>
+      <View style={[styles.toastWrapper, wrapperStyle]}>
         <View style={[styles.toast, style]}>
           {icon === 'loading' ? renderLoading() : <Icon name={icon} style={[styles.toastIcon]} />}
           <Text style={[styles.toastContent, textStyle]}>{children}</Text>
@@ -84,6 +85,7 @@ Toast.propTypes = {
   show: PropTypes.bool,
   onShow: PropTypes.func,
   onRequestClose: PropTypes.func,
+  wrapperStyle: View.propTypes.style,
   style: View.propTypes.style,
   textStyle: Text.propTypes.style,
   children: PropTypes.node

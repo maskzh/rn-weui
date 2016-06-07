@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: $V.globalTextColor,
     textAlign: 'center',
-    lineHeight: 14 * 1.6
+    lineHeight: 14 * $V.baseLineHeight,
   },
   oprArea: {
     marginTop: - $V.weuiBtnDefaultGap,
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: $V.globalTextColor,
     textAlign: 'center',
-    lineHeight: 14 * 1.6
+    lineHeight: 14 * $V.baseLineHeight,
   },
 })
 

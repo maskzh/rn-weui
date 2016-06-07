@@ -4,9 +4,11 @@ import _grid from './Grid/variable'
 import _cell from './Cell/variable'
 import _msg from './Msg/variable'
 import _progress from './Progress/variable'
+import _dialog from './Dialog/variable'
 
 const _global = {
   baseFontSize: 16,
+  baseLineHeight: 1.6,
   globalFontSize: 14,
 
   // font color
@@ -43,4 +45,5 @@ export default merge(
   _cell,
   _msg,
   _progress,
+  _dialog,
 )

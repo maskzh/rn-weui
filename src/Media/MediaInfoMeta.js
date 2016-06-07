@@ -24,13 +24,14 @@ const MediaInfoMeta = (props) => {
   const {
     extra,
     style,
+    textStyle,
     children,
     ...others
   } = props
 
   return (
-    <View style={[styles.mediaInfoMeta, extra ? styles.mediaInfoMetaExtra : {}]}>
-      <Text style={[styles.mediaInfoMetaText, style]} {...others}>
+    <View style={[styles.mediaInfoMeta, extra ? styles.mediaInfoMetaExtra : {}, style]}>
+      <Text style={[styles.mediaInfoMetaText, textStyle]} {...others}>
         {children}
       </Text>
     </View>
@@ -39,7 +40,8 @@ const MediaInfoMeta = (props) => {
 
 MediaInfoMeta.propTypes = {
   extra: PropTypes.bool,
-  style: Text.propTypes.style,
+  style: View.propTypes.style,
+  textStyle: Text.propTypes.style,
   children: PropTypes.node,
 }
 

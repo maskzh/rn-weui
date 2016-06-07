@@ -19,7 +19,7 @@ const Cells = (props) => {
   const { children, style, ...others } = props
   const childrenWithProps = React.Children.map(children, (child, idx) => {
     if (idx === 0) {
-      return React.cloneElement(child, { style: { borderTopWidth: 0 } })
+      return React.cloneElement(child, { first: true })
     }
     return child
   })

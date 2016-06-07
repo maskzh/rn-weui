@@ -30,11 +30,11 @@ const styles = StyleSheet.create({
   }
 })
 const PanelFooter = (props) => {
-  const { children, style, access, ...others } = props
+  const { children, style, textStyle, access, ...others } = props
   return (
-    <TouchableHighlight underlayColor={$V.itemActiveColor} {...others}>
+    <TouchableHighlight style={style} underlayColor={$V.itemActiveColor} {...others}>
       <View style={styles.PanelFooter}>
-        <Text style={[styles.PanelFooterText, style]}>
+        <Text style={[styles.PanelFooterText, textStyle]}>
           {children}
         </Text>
         {access ?
@@ -48,7 +48,8 @@ const PanelFooter = (props) => {
 PanelFooter.propTypes = {
   access: PropTypes.bool,
   children: PropTypes.node,
-  style: Text.propTypes.style,
+  style: TouchableHighlight.propTypes.style,
+  textStyle: Text.propTypes.style,
   others: PropTypes.object
 }
 

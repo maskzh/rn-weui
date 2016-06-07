@@ -31,6 +31,8 @@ import {
 } from './Media'
 import { Progress } from './Progress'
 import { Tab } from './Tab'
+import { Dialog } from './Dialog'
+import { ActionSheet } from './ActionSheet'
 
 module.exports = {
   Button, ButtonArea,
@@ -44,4 +46,6 @@ module.exports = {
   Panel, PanelHeader, PanelBody, PanelFooter,
   Progress,
   Tab,
+  Dialog,
+  ActionSheet,
 }

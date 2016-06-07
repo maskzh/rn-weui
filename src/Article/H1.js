@@ -3,13 +3,14 @@ import {
   Text,
   StyleSheet,
 } from 'react-native'
+import $V from '../variable'
 
 const styles = StyleSheet.create({
   h1: {
     fontSize: 17,
     fontWeight: '400',
     marginBottom: 17 * 0.75,
-    lineHeight: 17 * 1.6,
+    lineHeight: 17 * $V.baseLineHeight,
   }
 })
 
