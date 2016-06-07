@@ -62,10 +62,9 @@ class Progress extends Component {
 
     return (
       <View style={[styles.progress, style]}>
-        <View style={styles.progressBar} ref="progressBar">
+        <View style={styles.progressBar} ref="progressBar" onLayout={this.onLayout}>
           <View
             style={[styles.progressInnerBar, { width: value * this.state.base }]}
-            onLayout={this.onLayout}
           />
         </View>
         {this._renderOpr(onCancel)}

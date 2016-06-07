@@ -4,6 +4,7 @@ import {
   View,
   Text,
   TouchableHighlight,
+  TouchableWithoutFeedback,
   StyleSheet,
   Dimensions,
 } from 'react-native'
@@ -134,19 +135,21 @@ const Dialog = (props) => {
       onShow={onShow}
       onRequestClose={onRequestClose}
     >
-      <View style={[styles.dialogWrapper, wrapperStyle]}>
-        <View style={[styles.dialog, style]}>
-          <View style={[styles.dialogHeader, headerStyle]}>
-            <Text style={[styles.dialogTitle, titleStyle]}>{title}</Text>
-          </View>
-          <View style={[styles.dialogBody, bodyStyle]}>
-            {childrenWithProps}
-          </View>
-          <View style={[styles.dialogFooter, footerStyle]}>
-            {_renderButtons(buttons)}
+      <TouchableWithoutFeedback onPress={onRequestClose}>
+        <View style={[styles.dialogWrapper, wrapperStyle]}>
+          <View style={[styles.dialog, style]}>
+            <View style={[styles.dialogHeader, headerStyle]}>
+              <Text style={[styles.dialogTitle, titleStyle]}>{title}</Text>
+            </View>
+            <View style={[styles.dialogBody, bodyStyle]}>
+              {childrenWithProps}
+            </View>
+            <View style={[styles.dialogFooter, footerStyle]}>
+              {_renderButtons(buttons)}
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableWithoutFeedback>
     </Modal>
   )
 }
