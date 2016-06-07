@@ -38,6 +38,9 @@ const styles = StyleSheet.create({
     borderColor: $V.weuiCellBorderColor,
     borderStyle: 'solid'
   },
+  firstActionsheetCell: {
+    borderTopWidth: 0,
+  },
   actionsheetCellText: {
     textAlign: 'center',
     fontSize: 18,
@@ -110,7 +113,7 @@ class ActionSheet extends Component {
         <TouchableHighlight
           key={idx}
           underlayColor={underlayColor}
-          style={[styles.actionsheetCell, style]}
+          style={[styles.actionsheetCell, idx === 0 ? styles.firstActionsheetCell : {}, style]}
           {...others}
         >
           <Text
@@ -134,7 +137,7 @@ class ActionSheet extends Component {
         <TouchableHighlight
           key={idx}
           underlayColor={underlayColor}
-          style={[styles.actionsheetCell, style]}
+          style={[styles.actionsheetCell, idx === 0 ? styles.firstActionsheetCell : {}, style]}
           {...others}
         >
           <Text
