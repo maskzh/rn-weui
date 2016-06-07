@@ -10,6 +10,10 @@
 ![Panel](http://elliott.b0.upaiyun.com/img/cf3b622b9f!sm)
 ![Progress](http://elliott.b0.upaiyun.com/img/d1c2c9a277!sm)
 ![Tab](http://elliott.b0.upaiyun.com/img/7a2f8c250d!sm)
+![Dialog1](http://elliott.b0.upaiyun.com/img/5d15c1545e!sm)
+![Dialog2](http://elliott.b0.upaiyun.com/img/d294baab51!sm)
+![ActionSheet](http://elliott.b0.upaiyun.com/img/7f5f63549f!sm)
+
 ### TODO
 - <s>Grid</s>
 - <s>Button</s>
@@ -20,14 +24,18 @@
 - <s>Panel</s>
 - <s>Progress</s>
 - <s>Tab</s>
-- ActionSheet
-- Dialog
+- <s>ActionSheet</s>
+- <s>Dialog</s>
 - SearchBar
 - Cell(表单部分)
 
 ### 安装
 ```shell
+# install
 npm i rn-weui --save
+
+# link
+rnpm link
 ```
 
 ### 使用
