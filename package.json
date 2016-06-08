@@ -55,7 +55,7 @@
     ]
   },
   "author": "maskzh",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/maskzh/react-native-weui/issues"
   },
