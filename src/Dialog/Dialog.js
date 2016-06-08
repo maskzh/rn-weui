@@ -1,10 +1,11 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import {
   Modal,
   View,
   Text,
   TouchableHighlight,
   TouchableWithoutFeedback,
+  Animated,
   StyleSheet,
   Dimensions,
 } from 'react-native'
@@ -81,77 +82,112 @@ const styles = StyleSheet.create({
 
 const underlayColor = $V.weuiDialogLinkActiveBc
 
-const _renderButtons = (buttons) =>
-  buttons.map((button, idx) => {
+class Dialog extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      fadeAnim: new Animated.Value(0),
+      visible: false,
+    }
+  }
+
+  componentWillReceiveProps(nextProp) {
+    if (this.props.visible !== nextProp.visible) {
+      if (nextProp.visible) {
+        this.setState({ visible: true })
+        Animated.timing(
+          this.state.fadeAnim,
+          {
+            toValue: 1,
+            duration: 100,
+          }
+        ).start()
+      } else {
+        Animated.timing(
+          this.state.fadeAnim,
+          {
+            toValue: 0,
+            duration: 100,
+          }
+        ).start(() => this.setState({ visible: false }))
+      }
+    }
+  }
+
+  _renderButtons() {
+    return this.props.buttons.map((button, idx) => {
+      const {
+        type,
+        label,
+        ...others
+      } = button
+
+      return (
+        <TouchableHighlight
+          key={idx}
+          style={[styles.dialogFooterOpr, idx > 0 ? styles.dialogFooterOprWithBorder : {}]}
+          underlayColor={underlayColor}
+          {...others}
+        >
+          <Text
+            style={[styles.dialogFooterOprText, styles[`${type}DialogFooterOprText`]]}
+          >{label}</Text>
+        </TouchableHighlight>
+      )
+    })
+  }
+
+  render() {
     const {
-      type,
-      label,
-      ...others
-    } = button
+      title,
+      style,
+      wrapperStyle,
+      headerStyle,
+      titleStyle,
+      bodyStyle,
+      bodyTextStyle,
+      footerStyle,
+      children,
+      onShow,
+      onRequestClose,
+    } = this.props
+
+    const childrenWithProps = React.Children.map(children, (child) => {
+      if (child.type.displayName === 'Text') {
+        return React.cloneElement(child, { style: [styles.dialogBodyText, bodyTextStyle] })
+      }
+      return child
+    })
 
     return (
-      <TouchableHighlight
-        key={idx}
-        style={[styles.dialogFooterOpr, idx > 0 ? styles.dialogFooterOprWithBorder : {}]}
-        underlayColor={underlayColor}
-        {...others}
+      <Modal
+        visible={this.state.visible}
+        transparent={!false}
+        onShow={onShow}
+        onRequestClose={onRequestClose}
       >
-        <Text
-          style={[styles.dialogFooterOprText, styles[`${type}DialogFooterOprText`]]}
-        >{label}</Text>
-      </TouchableHighlight>
+        <TouchableWithoutFeedback onPress={onRequestClose}>
+          <Animated.View
+            style={[styles.dialogWrapper, wrapperStyle, { opacity: this.state.fadeAnim }]}
+          >
+            <Animated.View style={{ opacity: this.state.fadeAnim }}>
+              <View style={[styles.dialog, style]}>
+                <View style={[styles.dialogHeader, headerStyle]}>
+                  <Text style={[styles.dialogTitle, titleStyle]}>{title}</Text>
+                </View>
+                <View style={[styles.dialogBody, bodyStyle]}>
+                  {childrenWithProps}
+                </View>
+                <View style={[styles.dialogFooter, footerStyle]}>
+                  {this._renderButtons()}
+                </View>
+              </View>
+            </Animated.View>
+          </Animated.View>
+        </TouchableWithoutFeedback>
+      </Modal>
     )
-  })
-
-const Dialog = (props) => {
-  const {
-    visible = false,
-    title,
-    buttons,
-    style,
-    wrapperStyle,
-    headerStyle,
-    titleStyle,
-    bodyStyle,
-    bodyTextStyle,
-    footerStyle,
-    children,
-    onShow,
-    onRequestClose,
-  } = props
-
-  const childrenWithProps = React.Children.map(children, (child) => {
-    if (child.type.displayName === 'Text') {
-      return React.cloneElement(child, { style: [styles.dialogBodyText, bodyTextStyle] })
-    }
-    return child
-  })
-
-  return (
-    <Modal
-      animationType="fade"
-      visible={visible}
-      transparent={!false}
-      onShow={onShow}
-      onRequestClose={onRequestClose}
-    >
-      <TouchableWithoutFeedback onPress={onRequestClose}>
-        <View style={[styles.dialogWrapper, wrapperStyle]}>
-          <View style={[styles.dialog, style]}>
-            <View style={[styles.dialogHeader, headerStyle]}>
-              <Text style={[styles.dialogTitle, titleStyle]}>{title}</Text>
-            </View>
-            <View style={[styles.dialogBody, bodyStyle]}>
-              {childrenWithProps}
-            </View>
-            <View style={[styles.dialogFooter, footerStyle]}>
-              {_renderButtons(buttons)}
-            </View>
-          </View>
-        </View>
-      </TouchableWithoutFeedback>
-    </Modal>
-  )
+  }
 }
 
 Dialog.propTypes = {

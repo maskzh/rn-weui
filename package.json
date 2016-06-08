@@ -1,6 +1,6 @@
 {
   "name": "rn-weui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "weui for react-native",
   "main": "./lib",
   "scripts": {
@@ -51,7 +51,7 @@
   },
   "rnpm": {
     "assets": [
-      "Fonts"
+      "fonts"
     ]
   },
   "author": "maskzh",

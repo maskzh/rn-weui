@@ -22,7 +22,8 @@ const CellFooter = (props) => {
       </Text>
       {access ?
         <Image
-          style={{ width: 7.5, height: 12, marginLeft: 5 }} source={require('./back_arrow.png')}
+          style={{ width: 7.5, height: 12, marginLeft: 5 }}
+          source={require('../../assets/back_arrow.png')}
         /> : false}
     </View>
   )
