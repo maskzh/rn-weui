@@ -1,14 +1,15 @@
 import React, { PropTypes } from 'react'
 import { Text, StyleSheet } from 'react-native'
-import V from '../variable'
+import $V from '../variable'
 
 const styles = StyleSheet.create({
   cellsTips: {
-    marginTop: V.weuiCellTipsFontSize * 0.3,
-    paddingLeft: V.weuiCellGapH,
-    paddingRight: V.weuiCellGapH,
-    fontSize: V.weuiCellTipsFontSize,
-    color: V.globalTextColor,
+    paddingLeft: $V.weuiCellGapH,
+    paddingRight: $V.weuiCellGapH,
+    fontSize: $V.weuiCellTipsFontSize,
+    color: $V.globalTextColor,
+    lineHeight: $V.weuiCellTipsFontSize * $V.baseLineHeight,
+    marginBottom: $V.weuiCellTipsFontSize * 0.3,
   }
 })
 const CellsTips = (props) => {

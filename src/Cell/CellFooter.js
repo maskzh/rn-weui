@@ -6,19 +6,30 @@ const styles = StyleSheet.create({
   cellFooter: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginLeft: 5,
   },
   cellFooterText: {
     textAlign: 'center',
     color: V.globalTextColor,
     fontSize: V.weuiCellFontSize
   },
+  vcode: {
+    width: 100,
+    height: 44,
+  }
 })
 const CellFooter = (props) => {
   const { children, style, access, ...others } = props
+  const childrenWithProps = React.Children.map(children, child => {
+    if (child.type && child.type.displayName === 'Image' && !child.props.style) {
+      return React.cloneElement(child, { style: styles.vcode })
+    }
+    return child
+  })
   return (
     <View style={styles.cellFooter}>
       <Text style={[styles.cellFooterText, style]} {...others}>
-        {children}
+        {childrenWithProps}
       </Text>
       {access ?
         <Image

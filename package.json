@@ -30,7 +30,6 @@
     "eslint-plugin-jsx-a11y": "^1.2.2",
     "eslint-plugin-react": "^5.1.1",
     "immutable": "^3.8.1",
-    "lodash": "^4.13.1",
     "parse": "^1.8.3",
     "react": "^0.14.8",
     "react-native": "^0.25.1",
@@ -61,7 +60,7 @@
   },
   "homepage": "https://github.com/maskzh/react-native-weui#readme",
   "dependencies": {
-    "lodash.wrap": "^4.0.0",
+    "lodash": "^4.13.1",
     "react": "^15.1.0",
     "react-native": "^0.26.3",
     "react-native-scrollable-tab-view": "^0.4.3"

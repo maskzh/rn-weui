@@ -1,5 +1,4 @@
-# react-native-weui [![Build Status](https://travis-ci.org/maskzh/rn-weui.svg?branch=master)](https://travis-ci.org/maskzh/rn-weui) [![npm version](https://img.shields.io/npm/v/rn-weui.svg)](https://www.npmjs.org/package/rn-weui)
----
+# rn-weui [![Build Status](https://travis-ci.org/maskzh/rn-weui.svg?branch=master)](https://travis-ci.org/maskzh/rn-weui) [![npm version](https://img.shields.io/npm/v/rn-weui.svg)](https://www.npmjs.org/package/rn-weui)
 
 ### 安装
 ```shell
