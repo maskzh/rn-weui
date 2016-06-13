@@ -90,11 +90,15 @@ class CellScene extends Component {
       selectText1: '',
       selectText2: '',
       files: [],
+      radio: '',
+      checkbox: [],
     }
     this.setSelect1 = this.setSelect1.bind(this)
     this.setSelect2 = this.setSelect2.bind(this)
     this.handleUpload = this.handleUpload.bind(this)
     this.handleRemove = this.handleRemove.bind(this)
+    this.handleRadioChange = this.handleRadioChange.bind(this)
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
   }
   setSelect1(value) {
     this.setState({ selectVisiable1: false, selectText1: value.join(' ') })
@@ -111,6 +115,13 @@ class CellScene extends Component {
     this.setState({
       files: this.state.files.filter((file, idx) => idx !== index)
     })
+  }
+  handleRadioChange(radio) {
+    this.setState({ radio })
+  }
+  handleCheckboxChange(checkbox) {
+    this.setState({ checkbox })
+    console.log(checkbox)
   }
   render() {
     return (
@@ -179,27 +190,33 @@ class CellScene extends Component {
           </Cell>
         </Cells>
         <CellsTitle>单选列表项</CellsTitle>
-        <Cells>
-          <Cell>
-            <CellBody><CellText>标题文字</CellText></CellBody>
-            <Radio />
-          </Cell>
-          <Cell>
-            <CellBody><CellText>标题文字</CellText></CellBody>
-            <Radio />
-          </Cell>
-        </Cells>
+        <Radio
+          options={[
+            {
+              label: '选项一',
+              value: 1
+            }, {
+              label: '选项二',
+              value: 2
+            }
+          ]}
+          onChange={this.handleRadioChange}
+          value={this.state.radio}
+        />
         <CellsTitle>复选列表项</CellsTitle>
-        <Cells>
-          <Cell>
-            <CellHeader><Checkbox /></CellHeader>
-            <CellBody><CellText>标题文字</CellText></CellBody>
-          </Cell>
-          <Cell>
-            <CellHeader><Checkbox /></CellHeader>
-            <CellBody><CellText>标题文字</CellText></CellBody>
-          </Cell>
-        </Cells>
+        <Checkbox
+          options={[
+            {
+              label: '选项一',
+              value: 1
+            }, {
+              label: '选项二',
+              value: 2
+            }
+          ]}
+          onChange={this.handleCheckboxChange}
+          value={this.state.checkbox}
+        />
         <CellsTitle>开关</CellsTitle>
         <Cells>
           <Cell>
