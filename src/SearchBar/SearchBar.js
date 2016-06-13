@@ -153,7 +153,11 @@ class SearchBar extends Component {
               blurOnSubmit={!false}
               returnKeyType="search"
             />
-            <Text onPress={this.clearHandle}><Icon name="clear" style={styles.clearIcon} /></Text>
+            {text ? (
+              <Text onPress={this.clearHandle}>
+                <Icon name="clear" style={styles.clearIcon} />
+              </Text>
+            ) : null}
           </View>
           {(focus || text) ? null :
             <TouchableOpacity style={styles.searchCover} onPress={this.focus}>

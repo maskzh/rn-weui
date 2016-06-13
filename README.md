@@ -42,7 +42,8 @@ export default () =>
 - <s>ActionSheet</s>
 - <s>Dialog</s>
 - <s>SearchBar</s>
-- Cell(表单部分)
+- <s>Cell</s>
+- optimize
 
 ### 效果图
 ![Grid](http://elliott.b0.upaiyun.com/img/1554b80f86!sm)
