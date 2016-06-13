@@ -5,6 +5,7 @@ import _cell from './Cell/variable'
 import _msg from './Msg/variable'
 import _progress from './Progress/variable'
 import _dialog from './Dialog/variable'
+import _form from './Form/variable'
 
 const _global = {
   baseFontSize: 16,
@@ -46,4 +47,5 @@ export default merge(
   _msg,
   _progress,
   _dialog,
+  _form,
 )

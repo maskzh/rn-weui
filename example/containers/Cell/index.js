@@ -20,7 +20,9 @@ import {
   Radio,
   Checkbox,
   Select,
+  Uploader,
 } from '../../../src'
+import { concat } from 'lodash'
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -87,15 +89,28 @@ class CellScene extends Component {
       selectVisiable2: false,
       selectText1: '',
       selectText2: '',
+      files: [],
     }
     this.setSelect1 = this.setSelect1.bind(this)
     this.setSelect2 = this.setSelect2.bind(this)
+    this.handleUpload = this.handleUpload.bind(this)
+    this.handleRemove = this.handleRemove.bind(this)
   }
   setSelect1(value) {
     this.setState({ selectVisiable1: false, selectText1: value.join(' ') })
   }
   setSelect2(value, label) {
     this.setState({ selectVisiable2: false, selectText2: label.join(' ') })
+  }
+  handleUpload(file) {
+    this.setState({
+      files: concat(this.state.files, file)
+    })
+  }
+  handleRemove(index) {
+    this.setState({
+      files: this.state.files.filter((file, idx) => idx !== index)
+    })
   }
   render() {
     return (
@@ -198,7 +213,7 @@ class CellScene extends Component {
             <CellHeader><Label>qq</Label></CellHeader>
             <CellBody><Input placeholder="请输入 qq 号" /></CellBody>
           </Cell>
-          <Cell vcode >
+          <Cell vcode>
             <CellHeader><Label>验证码</Label></CellHeader>
             <CellBody><Input placeholder="请输入验证码" /></CellBody>
             <CellFooter><Image source={{ uri: 'https://weui.io/images/vcode.jpg' }} /></CellFooter>
@@ -216,7 +231,17 @@ class CellScene extends Component {
         <CellsTips>底部说明文字底部说明文字</CellsTips>
 
         <CellsTitle>图片上传</CellsTitle>
-        <Cells />
+        <Cells>
+          <Cell>
+            <CellBody>
+              <Uploader
+                files={this.state.files}
+                onChange={this.handleUpload}
+                onRemove={this.handleRemove}
+              />
+            </CellBody>
+          </Cell>
+        </Cells>
 
         <CellsTitle>文本域</CellsTitle>
         <Cells>
