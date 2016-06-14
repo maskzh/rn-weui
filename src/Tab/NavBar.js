@@ -13,7 +13,7 @@ import {
 
 const styles = StyleSheet.create({
   tab: {
-    height: 49,
+    height: 35,
     alignItems: 'center',
     justifyContent: 'center',
     paddingBottom: 30,
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     paddingRight: 20,
   },
   container: {
-    height: 50,
+    height: 35,
     borderWidth: 1,
     borderTopWidth: 0,
     borderLeftWidth: 0,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 const WINDOW_WIDTH = Dimensions.get('window').width
 
 class NavBar extends Component {
-  defaultProps = {
+  static defaultProps = {
     scrollOffset: 52,
     activeTextColor: 'navy',
     inactiveTextColor: 'black',
@@ -61,6 +61,7 @@ class NavBar extends Component {
     this.measureTab = this.measureTab.bind(this)
     this.onTabContainerLayout = this.onTabContainerLayout.bind(this)
     this.onContainerLayout = this.onContainerLayout.bind(this)
+    this.updateView = this.updateView.bind(this)
   }
 
   componentDidMount() {
@@ -177,7 +178,6 @@ class NavBar extends Component {
 
 
   render() {
-    console.log(this.props.tabs)
     const tabUnderlineStyle = {
       position: 'absolute',
       height: this.props.underlineHeight,
@@ -236,7 +236,6 @@ NavBar.propTypes = {
   tabStyle: View.propTypes.style,
   tabsContainerStyle: View.propTypes.style,
   textStyle: Text.propTypes.style,
-
   scrollValue: PropTypes.object,
 }
 

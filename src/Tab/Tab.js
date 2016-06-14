@@ -1,6 +1,7 @@
 // notice: Tab 不能有外层容器，否则不支持手势滑动
 import React, { PropTypes } from 'react'
-import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view'
+import ScrollableTabView from 'react-native-scrollable-tab-view'
+import NavBar from './NavBar'
 
 const Tab = (props) => {
   const {
@@ -13,7 +14,7 @@ const Tab = (props) => {
       style={style}
       initialPage={0}
       renderTabBar={() => (
-        <ScrollableTabBar
+        <NavBar
           underlineColor={'#04BE02'}
           underlineHeight={2}
           backgroundColor={'#fff'}
