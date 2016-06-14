@@ -49,7 +49,7 @@ export default () =>
 ### 效果图
 ![Grid](http://elliott.b0.upaiyun.com/img/1554b80f86!sm)
 ![Button](http://elliott.b0.upaiyun.com/img/0eaee86242!sm)
-![Cell](http://elliott.b0.upaiyun.com/img/629cdb855a!sm)
+<img src="http://elliott.b0.upaiyun.com/img/629cdb855a.gif" width="200" alt="Cell">
 ![Toast](http://elliott.b0.upaiyun.com/img/7a1c514893!sm)
 ![Dialog](http://elliott.b0.upaiyun.com/img/ff2041ef74!sm)
 ![Progress](http://elliott.b0.upaiyun.com/img/bcf87aa546!sm)
