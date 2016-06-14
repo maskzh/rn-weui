@@ -68,7 +68,7 @@ class ActionSheet extends Component {
       visible: false,
       height: 0,
     }
-    this.onLayout = this.onLayout.bind(this)
+    this.handleLayout = this.handleLayout.bind(this)
   }
 
   componentWillReceiveProps(nextProp) {
@@ -79,7 +79,7 @@ class ActionSheet extends Component {
           this.state.fadeAnim,
           {
             toValue: 1,
-            duration: 200,
+            duration: this.props.duration || 200,
           }
         ).start()
       } else {
@@ -87,14 +87,14 @@ class ActionSheet extends Component {
           this.state.fadeAnim,
           {
             toValue: 0,
-            duration: 200,
+            duration: this.props.duration || 200,
           }
         ).start(() => this.setState({ visible: false }))
       }
     }
   }
 
-  onLayout() {
+  handleLayout() {
     this.refs.actionsheet.measure((x, y, width, height) => {
       this.setState({ height })
     })
@@ -179,7 +179,11 @@ class ActionSheet extends Component {
                 }]
               }}
             >
-              <View ref="actionsheet" onLayout={this.onLayout} style={[styles.actionsheet, style]}>
+              <View
+                ref="actionsheet"
+                onLayout={this.handleLayout}
+                style={[styles.actionsheet, style]}
+              >
                 <View style={[styles.actionsheetMenu]}>
                   {this._renderMenuItems()}
                 </View>
@@ -201,6 +205,7 @@ ActionSheet.propTypes = {
   visible: PropTypes.bool,
   onShow: PropTypes.func,
   onRequestClose: PropTypes.func,
+  duration: PropTypes.number,
   style: View.propTypes.style,
   wrapperStyle: View.propTypes.style,
   children: PropTypes.node

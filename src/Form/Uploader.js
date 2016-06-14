@@ -9,6 +9,7 @@ import {
 import { Icon } from '../Icon'
 import ImagePicker from 'react-native-image-picker'
 import $V from '../variable'
+import concat from 'lodash/concat'
 
 const styles = StyleSheet.create({
   uploader: {},
@@ -123,6 +124,7 @@ class Uploader extends Component {
       // }
     }
     this.showImagePicker = this.showImagePicker.bind(this)
+    this.handleRemove = this.handleRemove.bind(this)
   }
 
   showImagePicker() {
@@ -132,10 +134,16 @@ class Uploader extends Component {
       } else if (response.error) {
         console.log('ImagePicker Error: ', response.error)
       } else {
-        return this.props.onChange && this.props.onChange(response)
+        return this.props.onChange && this.props.onChange(concat(this.props.files, response))
       }
       return false
     })
+  }
+
+  handleRemove(index) {
+    if (this.props.onChange) {
+      this.props.onChange(this.props.files.filter((file, idx) => idx !== index))
+    }
   }
 
   render() {
@@ -144,7 +152,6 @@ class Uploader extends Component {
       maxCount,
       files,
       style,
-      onRemove,
       ...others
     } = this.props
 
@@ -166,14 +173,12 @@ class Uploader extends Component {
                     {error ? <Icon name="warn" />
                     : <Text style={styles.uploaderStatusContent}>{status}</Text>}
                   </View> : null}
-                {onRemove ? (
-                  <Text
-                    style={styles.uploaderRemove}
-                    onPress={() => onRemove && onRemove(idx, file)}
-                  >
-                    <Icon name="clear" />
-                  </Text>
-                ) : null}
+                <Text
+                  style={styles.uploaderRemove}
+                  onPress={() => this.handleRemove(idx)}
+                >
+                  <Icon name="clear" />
+                </Text>
               </View>
             )
           })}
@@ -197,7 +202,6 @@ Uploader.propTypes = {
   maxCount: PropTypes.number,
   maxWidth: PropTypes.number,
   onChange: PropTypes.func,
-  onRemove: PropTypes.func,
   onError: PropTypes.func,
   files: PropTypes.array,
   lang: PropTypes.object,

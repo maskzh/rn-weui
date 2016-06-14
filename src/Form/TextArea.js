@@ -19,49 +19,36 @@ const styles = StyleSheet.create({
   }
 })
 
-class TextArea extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      value: props.value,
-      textCounter: props.defaultValue ? props.defaultValue.length : 0
-    }
-    this.handleChangeText = this.handleChangeText.bind(this)
-  }
+const TextArea = (props) => {
+  const {
+    style,
+    value,
+    onChange,
+    onChangeText,
+    showCounter = true,
+    maxLength,
+    defaultValue,
+    ...others
+  } = props
 
-  handleChangeText(value) {
-    this.setState({
-      textCounter: value.length,
-      value
-    })
-    if (this.props.onChangeText) this.props.onChangeText(value)
-  }
-
-  render() {
-    const {
-      style,
-      showCounter = true,
-      maxLength,
-      ...others
-    } = this.props
-
-    return (
-      <View>
-        <TextInput
-          multiline={!false}
-          maxLength={maxLength}
-          onChangeText={this.handleChangeText}
-          style={[styles.textarea, style]}
-          {...others}
-        />
-        {showCounter ?
-          <Text
-            style={styles.textareaCounter}
-          >{this.state.textCounter}{maxLength ? `/ ${maxLength}` : false}</Text>
-        : false}
-      </View>
-    )
-  }
+  return (
+    <View>
+      <TextInput
+        multiline={!false}
+        maxLength={maxLength}
+        onChangeText={onChangeText || onChange}
+        value={value}
+        defaultValue={defaultValue}
+        style={[styles.textarea, style]}
+        {...others}
+      />
+      {showCounter ?
+        <Text
+          style={styles.textareaCounter}
+        >{(value || defaultValue || '').length}{maxLength ? `/ ${maxLength}` : false}</Text>
+      : false}
+    </View>
+  )
 }
 
 TextArea.propTypes = {
@@ -69,6 +56,7 @@ TextArea.propTypes = {
   showCounter: PropTypes.bool,
   maxLength: PropTypes.number,
   defaultValue: PropTypes.string,
+  onChange: PropTypes.func,
   onChangeText: PropTypes.func,
   style: TextInput.propTypes.style,
 }

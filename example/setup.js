@@ -7,7 +7,7 @@ import App from './App'
 import env from './env'
 
 function setup(): Component {
-  // console.disableYellowBox = true
+  console.disableYellowBox = true
 
   Parse.initialize('example')
   Parse.serverURL = `${env.serverURL}/parse`

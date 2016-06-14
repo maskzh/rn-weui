@@ -91,9 +91,9 @@ class Dialog extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProp) {
-    if (this.props.visible !== nextProp.visible) {
-      if (nextProp.visible) {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.visible !== this.props.visible) {
+      if (nextProps.visible) {
         this.setState({ visible: true })
         Animated.timing(
           this.state.fadeAnim,

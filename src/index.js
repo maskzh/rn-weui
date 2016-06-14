@@ -4,7 +4,7 @@ import {
   Cells, CellsTitle, CellsTips, Cell, CellHeader, CellBody, CellFooter, CellText,
 } from './Cell'
 import {
-  TextArea, Input, Switch, Radio, Checkbox, Select, Uploader, Label,
+  TextArea, Input, Switch, RadioCells, CheckboxCells, Picker, Uploader, Label, Select,
 } from './Form'
 import { Icon } from './Icon'
 import { Toast } from './Toast'
@@ -26,7 +26,7 @@ module.exports = {
   Button, ButtonArea,
   Grids, Grid, GridIcon, GridLabel,
   Cells, CellsTitle, CellsTips, Cell, CellHeader, CellBody, CellFooter, CellText,
-  TextArea, Input, Switch, Radio, Checkbox, Select, Uploader, Label,
+  TextArea, Input, Switch, RadioCells, CheckboxCells, Picker, Uploader, Label, Select,
   Icon,
   Toast,
   Msg,

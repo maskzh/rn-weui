@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import {
   Switch as RNSwitch,
   StyleSheet,
@@ -8,40 +8,29 @@ const styles = StyleSheet.create({
   switch: {}
 })
 
-class Switch extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      value: props.value || false,
-    }
-    this.handleValueChange = this.handleValueChange.bind(this)
-  }
+const Switch = (props) => {
+  const {
+    value,
+    onChange,
+    onValueChange,
+    style,
+    ...others
+  } = props
 
-  handleValueChange(value) {
-    this.setState({ value })
-    if (this.onValueChange) this.onValueChange(value)
-  }
-
-  render() {
-    const {
-      style,
-      ...others
-    } = this.props
-
-    return (
-      <RNSwitch
-        style={[styles.switch, style]}
-        onValueChange={this.handleValueChange}
-        value={this.state.value}
-        {...others}
-      />
-    )
-  }
+  return (
+    <RNSwitch
+      style={[styles.switch, style]}
+      onValueChange={onValueChange || onChange}
+      value={value}
+      {...others}
+    />
+  )
 }
 
 Switch.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.bool,
   style: RNSwitch.propTypes.style,
+  onChange: PropTypes.func,
   onValueChange: PropTypes.func,
 }
 

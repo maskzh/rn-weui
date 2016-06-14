@@ -1,19 +1,21 @@
 import TextArea from './TextArea'
 import Input from './Input'
 import Switch from './Switch'
-import Radio from './Radio'
-import Checkbox from './Checkbox'
-import Select from './Select'
+import RadioCells from './RadioCells'
+import CheckboxCells from './CheckboxCells'
+import Picker from './Picker'
 import Uploader from './Uploader'
 import Label from './Label'
+import Select from './Select'
 
 module.exports = {
   TextArea,
   Input,
   Switch,
-  Radio,
-  Checkbox,
-  Select,
+  RadioCells,
+  CheckboxCells,
+  Picker,
   Uploader,
   Label,
+  Select,
 }

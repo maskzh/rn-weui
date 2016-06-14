@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 import {
   TextInput,
   StyleSheet,
@@ -12,39 +12,28 @@ const styles = StyleSheet.create({
   }
 })
 
-class Input extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      value: props.value
-    }
-    this.handleChangeText = this.handleChangeText.bind(this)
-  }
+const Input = (props) => {
+  const {
+    value,
+    onChange,
+    onChangeText,
+    style,
+    ...others
+  } = props
 
-  handleChangeText(value) {
-    this.setState({ value })
-    if (this.props.onChangeText) this.props.onChangeText(value)
-  }
-
-  render() {
-    const {
-      style,
-      ...others
-    } = this.props
-
-    return (
-      <TextInput
-        style={[styles.input, style]}
-        value={this.state.value}
-        onChangeText={this.handleChangeText}
-        {...others}
-      />
-    )
-  }
+  return (
+    <TextInput
+      style={[styles.input, style]}
+      value={value}
+      onChangeText={onChangeText || onChange}
+      {...others}
+    />
+  )
 }
 
 Input.propTypes = {
   value: PropTypes.string,
+  onChange: PropTypes.func,
   onChangeText: PropTypes.func,
   style: TextInput.propTypes.style,
 }

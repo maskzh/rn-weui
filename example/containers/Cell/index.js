@@ -17,12 +17,11 @@ import {
   Label,
   TextArea,
   Switch,
-  Radio,
-  Checkbox,
-  Select,
+  RadioCells,
+  CheckboxCells,
   Uploader,
+  Select,
 } from '../../../src'
-import { concat } from 'lodash'
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -85,43 +84,49 @@ class CellScene extends Component {
   constructor() {
     super()
     this.state = {
-      selectVisiable1: false,
-      selectVisiable2: false,
-      selectText1: '',
-      selectText2: '',
       files: [],
       radio: '',
       checkbox: [],
+      text: '默认',
+      switchValue: false,
+      textarea: '',
+      selectedValue: [],
+      select: [],
+      selectLabel: [],
     }
-    this.setSelect1 = this.setSelect1.bind(this)
-    this.setSelect2 = this.setSelect2.bind(this)
-    this.handleUpload = this.handleUpload.bind(this)
+    this.setSelect = this.setSelect.bind(this)
+    this.handleUploadChange = this.handleUploadChange.bind(this)
     this.handleRemove = this.handleRemove.bind(this)
     this.handleRadioChange = this.handleRadioChange.bind(this)
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
+    this.handleSwitchChange = this.handleSwitchChange.bind(this)
+    this.handleTextareaChange = this.handleTextareaChange.bind(this)
+
+    this.handleSelectChange = this.handleSelectChange.bind(this)
   }
-  setSelect1(value) {
-    this.setState({ selectVisiable1: false, selectText1: value.join(' ') })
+  setSelect(value) {
+    this.setState({ select: value })
   }
-  setSelect2(value, label) {
-    this.setState({ selectVisiable2: false, selectText2: label.join(' ') })
-  }
-  handleUpload(file) {
-    this.setState({
-      files: concat(this.state.files, file)
-    })
-  }
-  handleRemove(index) {
-    this.setState({
-      files: this.state.files.filter((file, idx) => idx !== index)
-    })
+  handleUploadChange(files) {
+    this.setState({ files })
   }
   handleRadioChange(radio) {
     this.setState({ radio })
   }
   handleCheckboxChange(checkbox) {
     this.setState({ checkbox })
-    console.log(checkbox)
+  }
+  handleChangeText(text) {
+    this.setState({ text })
+  }
+  handleSwitchChange(switchValue) {
+    this.setState({ switchValue })
+  }
+  handleTextareaChange(textarea) {
+    this.setState({ textarea })
+  }
+  handleSelectChange(value) {
+    this.setState({ selectedValue: value })
   }
   render() {
     return (
@@ -190,7 +195,7 @@ class CellScene extends Component {
           </Cell>
         </Cells>
         <CellsTitle>单选列表项</CellsTitle>
-        <Radio
+        <RadioCells
           options={[
             {
               label: '选项一',
@@ -204,7 +209,7 @@ class CellScene extends Component {
           value={this.state.radio}
         />
         <CellsTitle>复选列表项</CellsTitle>
-        <Checkbox
+        <CheckboxCells
           options={[
             {
               label: '选项一',
@@ -221,27 +226,27 @@ class CellScene extends Component {
         <Cells>
           <Cell>
             <CellBody><CellText>标题文字</CellText></CellBody>
-            <Switch />
+            <Switch
+              onChange={this.handleSwitchChange}
+              value={this.state.switchValue}
+            />
           </Cell>
         </Cells>
         <CellsTitle>表单</CellsTitle>
         <Cells>
           <Cell>
             <CellHeader><Label>qq</Label></CellHeader>
-            <CellBody><Input placeholder="请输入 qq 号" /></CellBody>
-          </Cell>
-          <Cell vcode>
-            <CellHeader><Label>验证码</Label></CellHeader>
-            <CellBody><Input placeholder="请输入验证码" /></CellBody>
-            <CellFooter><Image source={{ uri: 'https://weui.io/images/vcode.jpg' }} /></CellFooter>
-          </Cell>
-          <Cell>
-            <CellHeader><Label>银行卡</Label></CellHeader>
-            <CellBody><Input placeholder="请输入银行卡号" /></CellBody>
+            <CellBody>
+              <Input
+                placeholder="请输入 qq 号"
+                value={this.state.text}
+                onChangeText={this.handleChangeText}
+              />
+            </CellBody>
           </Cell>
           <Cell vcode error>
             <CellHeader><Label>验证码</Label></CellHeader>
-            <CellBody><Input placeholder="请输入验证码" /></CellBody>
+            <CellBody><Input placeholder="请输入验证码" defaultValue="111" /></CellBody>
             <CellFooter><Image source={{ uri: 'https://weui.io/images/vcode.jpg' }} /></CellFooter>
           </Cell>
         </Cells>
@@ -253,8 +258,7 @@ class CellScene extends Component {
             <CellBody>
               <Uploader
                 files={this.state.files}
-                onChange={this.handleUpload}
-                onRemove={this.handleRemove}
+                onChange={this.handleUploadChange}
               />
             </CellBody>
           </Cell>
@@ -264,35 +268,39 @@ class CellScene extends Component {
         <Cells>
           <Cell>
             <CellBody>
-              <TextArea placeholder="请输入评论" />
+              <TextArea
+                placeholder="请输入评论"
+                value={this.state.textarea}
+                onChange={this.handleTextareaChange}
+              />
             </CellBody>
           </Cell>
         </Cells>
         <CellsTitle>选择</CellsTitle>
         <Cells>
-          <Cell onPress={() => this.setState({ selectVisiable1: true })}>
-            <CellBody><CellText>{this.state.selectText1}</CellText></CellBody>
-            <CellFooter access />
+          <Cell access>
+            <CellBody>
+              <Select
+                pickerData={pickerData1}
+                value={this.state.selectedValue}
+                onChange={this.handleSelectChange}
+                placeholder="请选择"
+              />
+            </CellBody>
+            <CellFooter />
           </Cell>
-          <Cell onPress={() => this.setState({ selectVisiable2: true })}>
-            <CellHeader><Label>选择地区</Label></CellHeader>
-            <CellBody><CellText>{this.state.selectText2}</CellText></CellBody>
-            <CellFooter access />
+          <Cell access>
+            <CellBody>
+              <Select
+                pickerData={pickerData2}
+                value={this.state.select}
+                onChange={this.setSelect}
+                placeholder="请选择"
+              />
+            </CellBody>
+            <CellFooter />
           </Cell>
         </Cells>
-        <Select
-          visiable={this.state.selectVisiable1}
-          pickerTitle="选择数字"
-          pickerData={pickerData1}
-          selectedValue={[1, 5, 9]}
-          onPickerDone={this.setSelect1}
-        />
-        <Select
-          visiable={this.state.selectVisiable2}
-          pickerTitle="选择地区"
-          pickerData={pickerData2}
-          onPickerDone={this.setSelect2}
-        />
       </ScrollView>
     )
   }

@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
 const CellFooter = (props) => {
   const { children, style, access, ...others } = props
   const childrenWithProps = React.Children.map(children, child => {
+    if (!child.type) return <Text style={[styles.cellFooterText, style]} {...others}>{child}</Text>
     if (child.type && child.type.displayName === 'Image' && !child.props.style) {
       return React.cloneElement(child, { style: styles.vcode })
     }
@@ -28,9 +29,7 @@ const CellFooter = (props) => {
   })
   return (
     <View style={styles.cellFooter}>
-      <Text style={[styles.cellFooterText, style]} {...others}>
-        {childrenWithProps}
-      </Text>
+      {childrenWithProps}
       {access ?
         <Image
           style={{ width: 7.5, height: 12, marginLeft: 5 }}
