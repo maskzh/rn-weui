@@ -134,15 +134,16 @@ class Uploader extends Component {
       } else if (response.error) {
         console.log('ImagePicker Error: ', response.error)
       } else {
-        return this.props.onChange && this.props.onChange(concat(this.props.files, response))
+        return this.props.onChange &&
+        this.props.onChange(concat(this.props.files, response), response)
       }
       return false
     })
   }
 
-  handleRemove(index) {
+  handleRemove(index, deleteFile) {
     if (this.props.onChange) {
-      this.props.onChange(this.props.files.filter((file, idx) => idx !== index))
+      this.props.onChange(this.props.files.filter((file, idx) => idx !== index), deleteFile)
     }
   }
 
@@ -175,7 +176,7 @@ class Uploader extends Component {
                   </View> : null}
                 <Text
                   style={styles.uploaderRemove}
-                  onPress={() => this.handleRemove(idx)}
+                  onPress={() => this.handleRemove(idx, file)}
                 >
                   <Icon name="clear" />
                 </Text>

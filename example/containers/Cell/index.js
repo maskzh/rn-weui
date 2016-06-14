@@ -96,12 +96,10 @@ class CellScene extends Component {
     }
     this.setSelect = this.setSelect.bind(this)
     this.handleUploadChange = this.handleUploadChange.bind(this)
-    this.handleRemove = this.handleRemove.bind(this)
     this.handleRadioChange = this.handleRadioChange.bind(this)
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this)
     this.handleSwitchChange = this.handleSwitchChange.bind(this)
     this.handleTextareaChange = this.handleTextareaChange.bind(this)
-
     this.handleSelectChange = this.handleSelectChange.bind(this)
   }
   setSelect(value) {
