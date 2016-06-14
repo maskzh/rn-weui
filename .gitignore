@@ -40,7 +40,6 @@ android/app/libs
 android/keystores/debug.keystore
 
 # Custom
-/docs
 /android
 /ios
 /lib

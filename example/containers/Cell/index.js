@@ -288,6 +288,9 @@ class CellScene extends Component {
             <CellFooter />
           </Cell>
           <Cell access>
+            <CellHeader>
+              <Label>选择地区</Label>
+            </CellHeader>
             <CellBody>
               <Select
                 pickerData={pickerData2}
