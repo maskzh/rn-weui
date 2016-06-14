@@ -7,6 +7,7 @@ import {
   Animated,
   Dimensions,
   StyleSheet,
+  Easing,
 } from 'react-native'
 
 const { width, height } = Dimensions.get('window')
@@ -42,17 +43,6 @@ const styles = StyleSheet.create({
     borderColor: '#c3c3c3',
     alignItems: 'center'
   },
-  pickerBtnView: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center'
-  },
-  pickerMoveBtn: {
-    color: '#149be0',
-    fontSize: 16,
-    marginLeft: 20
-  },
   pickerCancelBtn: {
     flex: 1,
     flexDirection: 'row',
@@ -74,7 +64,7 @@ const styles = StyleSheet.create({
   },
   pickerFinishBtnText: {
     fontSize: 16,
-    color: '#149be0'
+    color: '#149be0',
   }
 })
 
@@ -84,7 +74,7 @@ class Picker extends Component {
     style: {},
     pickerBtnText: '完成',
     pickerCancelBtnText: '取消',
-    duration: 200,
+    duration: 400,
     selectedValue: [],
     onPickerDone: () => {},
     onValueChange: () => {},
@@ -116,6 +106,7 @@ class Picker extends Component {
           {
             toValue: 1,
             duration: this.props.duration,
+            easing: Easing.easeOut,
           }
         ).start()
       } else {
@@ -124,8 +115,11 @@ class Picker extends Component {
           {
             toValue: 0,
             duration: this.props.duration,
+            easing: Easing.easeOut,
           }
-        ).start(() => this.setState({ visible: false }))
+        ).start((e) => {
+          if (e.finished) this.setState({ visible: false })
+        })
       }
     }
   }
@@ -381,7 +375,7 @@ class Picker extends Component {
         onShow={onShow}
         onRequestClose={onRequestClose}
       >
-        <Animated.View style={[styles.mask, wrapperStyle, { opacity: this.state.fadeAnim }]} >
+        <View style={[styles.mask, wrapperStyle]} >
           <Text
             style={{ width, height }}
             onPress={onRequestClose}
@@ -420,7 +414,7 @@ class Picker extends Component {
               </View>
             </View>
           </Animated.View>
-        </Animated.View>
+        </View>
       </Modal>
     )
   }

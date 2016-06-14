@@ -73,8 +73,8 @@ class Select extends Component {
   }
 
   handlePickerDone(value) {
-    this.setState({ visible: false })
     if (this.props.onChange) this.props.onChange(value)
+    this.setState({ visible: false })
   }
 
   handleRequestClose() {

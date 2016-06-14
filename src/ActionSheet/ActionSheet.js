@@ -6,6 +6,7 @@ import {
   TouchableHighlight,
   TouchableWithoutFeedback,
   Animated,
+  Easing,
   StyleSheet,
   Dimensions,
 } from 'react-native'
@@ -79,7 +80,8 @@ class ActionSheet extends Component {
           this.state.fadeAnim,
           {
             toValue: 1,
-            duration: this.props.duration || 200,
+            duration: this.props.duration || 400,
+            easing: Easing.easeOut
           }
         ).start()
       } else {
@@ -87,7 +89,8 @@ class ActionSheet extends Component {
           this.state.fadeAnim,
           {
             toValue: 0,
-            duration: this.props.duration || 200,
+            duration: this.props.duration || 400,
+            easing: Easing.easeOut
           }
         ).start(() => this.setState({ visible: false }))
       }

@@ -6,6 +6,7 @@ import {
   TouchableHighlight,
   TouchableWithoutFeedback,
   Animated,
+  Easing,
   StyleSheet,
   Dimensions,
 } from 'react-native'
@@ -99,7 +100,8 @@ class Dialog extends Component {
           this.state.fadeAnim,
           {
             toValue: 1,
-            duration: 100,
+            duration: this.props.duration || 200,
+            easing: Easing.easeOut,
           }
         ).start()
       } else {
@@ -107,7 +109,8 @@ class Dialog extends Component {
           this.state.fadeAnim,
           {
             toValue: 0,
-            duration: 100,
+            duration: this.props.duration || 200,
+            easing: Easing.easeOut,
           }
         ).start(() => this.setState({ visible: false }))
       }
@@ -195,6 +198,7 @@ Dialog.propTypes = {
   buttons: PropTypes.array,
   visible: PropTypes.bool,
   onShow: PropTypes.func,
+  duration: PropTypes.number,
   onRequestClose: PropTypes.func,
   style: View.propTypes.style,
   wrapperStyle: View.propTypes.style,
