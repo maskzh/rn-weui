@@ -13,20 +13,12 @@ import {
 const { width, height } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
-  mask: {
-    position: 'absolute',
-    top: 0,
-    backgroundColor: 'transparent',
-    height,
-    width,
-  },
   picker: {
     position: 'absolute',
     bottom: 0,
     left: 0,
     backgroundColor: '#bdc0c7',
     width,
-    height: 250,
   },
   pickerWrap: {
     flexDirection: 'row'
@@ -74,7 +66,7 @@ class Picker extends Component {
     style: {},
     pickerBtnText: '完成',
     pickerCancelBtnText: '取消',
-    duration: 400,
+    duration: 300,
     selectedValue: [],
     onPickerDone: () => {},
     onValueChange: () => {},
@@ -375,20 +367,26 @@ class Picker extends Component {
         onShow={onShow}
         onRequestClose={onRequestClose}
       >
-        <View style={[styles.mask, wrapperStyle]} >
-          <Text
-            style={{ width, height }}
-            onPress={onRequestClose}
-          />
+        <View style={{ width, height }}>
           <Animated.View
-            style={{
+            style={[{ width, height }, wrapperStyle, {
+              opacity: this.state.fadeAnim
+            }]}
+          >
+            <Text
+              style={{ width, height }}
+              onPress={onRequestClose}
+            />
+          </Animated.View>
+          <Animated.View
+            style={[styles.picker, style, {
               transform: [{
                 translateY: this.state.fadeAnim.interpolate({
                   inputRange: [0, 1], outputRange: [this.state.height, 0] })
               }]
-            }}
+            }]}
           >
-            <View ref="picker" onLayout={this.handleLayout} style={[styles.picker, style]}>
+            <View ref="picker" onLayout={this.handleLayout}>
               <View
                 style={[styles.pickerToolbar, pickerToolBarStyle,
                   { width: this.width || width }]}

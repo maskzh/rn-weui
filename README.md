@@ -4,7 +4,7 @@
 ### 目录结构
 
 ```
-react-weui
+rn-weui
 ├── README.md
 ├── assets                  # 资源
 ├── docs                    # 文档说明
@@ -75,7 +75,7 @@ export default () =>
 - <s>Dialog</s>
 - <s>SearchBar</s>
 - <s>Cell</s>
-- optimize
+- test and optimize
 - docs
 
 ### License

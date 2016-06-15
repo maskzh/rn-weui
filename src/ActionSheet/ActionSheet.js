@@ -4,7 +4,6 @@ import {
   View,
   Text,
   TouchableHighlight,
-  TouchableWithoutFeedback,
   Animated,
   Easing,
   StyleSheet,
@@ -12,17 +11,14 @@ import {
 } from 'react-native'
 import $V from '../variable'
 
+const { width, height } = Dimensions.get('window')
+
 const styles = StyleSheet.create({
-  actionsheetWrapper: {
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'center',
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-    backgroundColor: 'rgba(0,0,0,.6)',
-  },
   actionsheet: {
-    width: Dimensions.get('window').width,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    width,
     backgroundColor: $V.pageDefaultBackgroundColor,
   },
   actionsheetMenu: {
@@ -80,7 +76,7 @@ class ActionSheet extends Component {
           this.state.fadeAnim,
           {
             toValue: 1,
-            duration: this.props.duration || 400,
+            duration: this.props.duration || 300,
             easing: Easing.easeOut
           }
         ).start()
@@ -89,7 +85,7 @@ class ActionSheet extends Component {
           this.state.fadeAnim,
           {
             toValue: 0,
-            duration: this.props.duration || 400,
+            duration: this.props.duration || 300,
             easing: Easing.easeOut
           }
         ).start(() => this.setState({ visible: false }))
@@ -98,8 +94,8 @@ class ActionSheet extends Component {
   }
 
   handleLayout() {
-    this.refs.actionsheet.measure((x, y, width, height) => {
-      this.setState({ height })
+    this.refs.actionsheet.measure((x, y, w, h) => {
+      this.setState({ height: h })
     })
   }
 
@@ -166,37 +162,38 @@ class ActionSheet extends Component {
         onShow={onShow}
         onRequestClose={onRequestClose}
       >
-        <TouchableWithoutFeedback onPress={onRequestClose}>
+        <View style={{ width, height }}>
           <Animated.View
-            style={[
-              styles.actionsheetWrapper,
-              wrapperStyle,
-              { opacity: this.state.fadeAnim }
-            ]}
+            style={[{ width, height, backgroundColor: 'rgba(0,0,0,.6)' }, wrapperStyle, {
+              opacity: this.state.fadeAnim
+            }]}
           >
-            <Animated.View
-              style={{
-                transform: [{
-                  translateY: this.state.fadeAnim.interpolate({
-                    inputRange: [0, 1], outputRange: [this.state.height, 0] })
-                }]
-              }}
-            >
-              <View
-                ref="actionsheet"
-                onLayout={this.handleLayout}
-                style={[styles.actionsheet, style]}
-              >
-                <View style={[styles.actionsheetMenu]}>
-                  {this._renderMenuItems()}
-                </View>
-                <View style={[styles.actionsheetAction]}>
-                  {this._renderActions()}
-                </View>
-              </View>
-            </Animated.View>
+            <Text
+              style={{ width, height }}
+              onPress={onRequestClose}
+            />
           </Animated.View>
-        </TouchableWithoutFeedback>
+          <Animated.View
+            style={[styles.actionsheet, style, {
+              transform: [{
+                translateY: this.state.fadeAnim.interpolate({
+                  inputRange: [0, 1], outputRange: [this.state.height, 0] })
+              }]
+            }]}
+          >
+            <View
+              ref="actionsheet"
+              onLayout={this.handleLayout}
+            >
+              <View style={[styles.actionsheetMenu]}>
+                {this._renderMenuItems()}
+              </View>
+              <View style={[styles.actionsheetAction]}>
+                {this._renderActions()}
+              </View>
+            </View>
+          </Animated.View>
+        </View>
       </Modal>
     )
   }
