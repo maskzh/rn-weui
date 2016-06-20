@@ -3,15 +3,18 @@ import {
   View,
   Text,
   TextInput,
-  StyleSheet,
 } from 'react-native'
+import StyleSheet from '../StyleSheet'
 import $V from '../variable'
 
 const styles = StyleSheet.create({
   textarea: {
     fontSize: $V.weuiCellFontSize,
-    lineHeight: $V.baseLineHeight,
     height: $V.weuiCellFontSize * $V.baseLineHeight * 3,
+    lineHeight: $V.weuiCellFontSize * $V.baseLineHeight,
+    android: {
+      lineHeight: Math.round($V.weuiCellFontSize * $V.baseLineHeight),
+    },
   },
   textareaCounter: {
     color: $V.globalDescColor,

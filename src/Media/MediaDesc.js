@@ -1,14 +1,17 @@
 import React, { PropTypes } from 'react'
 import {
   Text,
-  StyleSheet
 } from 'react-native'
+import StyleSheet from '../StyleSheet'
 
 const styles = StyleSheet.create({
   mediaDesc: {
     fontSize: 13,
+    color: '#999999',
     lineHeight: 13 * 1.2,
-    color: '#999999'
+    android: {
+      lineHeight: Math.round(13 * 1.2),
+    },
   }
 })
 const MediaDesc = (props) => {

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
-import { Text, StyleSheet } from 'react-native'
+import { Text } from 'react-native'
+import StyleSheet from '../StyleSheet'
 import $V from '../variable'
 
 const styles = StyleSheet.create({
@@ -8,8 +9,11 @@ const styles = StyleSheet.create({
     paddingRight: $V.weuiCellGapH,
     fontSize: $V.weuiCellTipsFontSize,
     color: $V.globalTextColor,
-    lineHeight: $V.weuiCellTipsFontSize * $V.baseLineHeight,
     marginBottom: $V.weuiCellTipsFontSize * 0.3,
+    lineHeight: $V.weuiCellTipsFontSize * $V.baseLineHeight,
+    android: {
+      lineHeight: Math.round($V.weuiCellTipsFontSize * $V.baseLineHeight),
+    },
   }
 })
 const CellsTips = (props) => {

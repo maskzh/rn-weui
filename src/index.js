@@ -1,3 +1,4 @@
+import StyleSheet from './StyleSheet'
 import { Grids, Grid, GridIcon, GridLabel } from './Grid'
 import { Button, ButtonArea } from './Button'
 import {
@@ -23,6 +24,7 @@ import { ActionSheet } from './ActionSheet'
 import { SearchBar } from './SearchBar'
 
 module.exports = {
+  StyleSheet,
   Button, ButtonArea,
   Grids, Grid, GridIcon, GridLabel,
   Cells, CellsTitle, CellsTips, Cell, CellHeader, CellBody, CellFooter, CellText,

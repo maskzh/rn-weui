@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react'
 import {
   View,
   Text,
-  StyleSheet,
   Dimensions
 } from 'react-native'
 import { Button, ButtonArea } from '../Button'
 import { Icon } from '../Icon'
+import StyleSheet from '../StyleSheet'
 import $V from '../variable'
 
 const styles = StyleSheet.create({
@@ -33,6 +33,9 @@ const styles = StyleSheet.create({
     color: $V.globalTextColor,
     textAlign: 'center',
     lineHeight: 14 * $V.baseLineHeight,
+    android: {
+      lineHeight: Math.round(14 * $V.baseLineHeight),
+    },
   },
   oprArea: {
     marginTop: - $V.weuiBtnDefaultGap,
@@ -47,6 +50,9 @@ const styles = StyleSheet.create({
     color: $V.globalTextColor,
     textAlign: 'center',
     lineHeight: 14 * $V.baseLineHeight,
+    android: {
+      lineHeight: Math.round(14 * $V.baseLineHeight),
+    },
   },
 })
 

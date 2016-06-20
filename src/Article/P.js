@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react'
 import {
   Text,
-  StyleSheet,
 } from 'react-native'
+import StyleSheet from '../StyleSheet'
 import $V from '../variable'
 
 const styles = StyleSheet.create({
@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     lineHeight: 15 * $V.baseLineHeight,
+    android: {
+      lineHeight: Math.round(15 * $V.baseLineHeight),
+    },
   }
 })
 

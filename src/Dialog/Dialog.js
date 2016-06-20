@@ -7,9 +7,9 @@ import {
   TouchableWithoutFeedback,
   Animated,
   Easing,
-  StyleSheet,
   Dimensions,
 } from 'react-native'
+import StyleSheet from '../StyleSheet'
 import $V from '../variable'
 
 const styles = StyleSheet.create({
@@ -44,7 +44,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: $V.globalTextColor,
     textAlign: 'center',
-    lineHeight: 15 * $V.baseLineHeight
+    lineHeight: 15 * $V.baseLineHeight,
+    android: {
+      lineHeight: Math.round(15 * $V.baseLineHeight),
+    },
   },
   dialogFooter: {
     marginTop: 30,

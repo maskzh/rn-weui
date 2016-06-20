@@ -10,8 +10,6 @@ const styles = StyleSheet.create({
     marginRight: $V.baseFontSize * 0.8,
     width: 60,
     height: 60,
-    // lineHeight: 60,
-    // textAlign: 'center',
   },
   mediaAppmsgThumb: {
     width: 60,

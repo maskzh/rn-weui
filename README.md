@@ -22,6 +22,7 @@ npm i rn-weui --save
 
 # link
 rnpm link
+rnpm link react-native-image-picker
 ```
 
 ### 使用
