@@ -26,7 +26,7 @@ const MediaHeader = (props) => {
 
   const childrenWithProps = React.Children.map(children, child => {
     if (child.type.displayName === 'Image' && !child.props.style) {
-      return React.cloneElement(child, { style: styles.mediaAppmsgThumb })
+      return React.cloneElement(child, { style: [styles.mediaAppmsgThumb, child.props.style] })
     }
     return child
   })

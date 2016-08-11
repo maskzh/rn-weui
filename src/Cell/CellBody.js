@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 const CellBody = (props) => {
   const { error, children, style, ...others } = props
   const childrenWithProps = React.Children.map(children, (child) =>
-    React.cloneElement(child, { style: [
+    React.cloneElement(child, { style: [child.props.style,
       error ? styles.error : null
     ] })
   )

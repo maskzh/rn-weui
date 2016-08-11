@@ -1,4 +1,4 @@
-import { merge } from 'lodash'
+import merge from 'lodash/merge'
 import _button from './Button/variable'
 import _grid from './Grid/variable'
 import _cell from './Cell/variable'

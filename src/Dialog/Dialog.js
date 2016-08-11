@@ -160,7 +160,9 @@ class Dialog extends Component {
 
     const childrenWithProps = React.Children.map(children, (child) => {
       if (child.type.displayName === 'Text') {
-        return React.cloneElement(child, { style: [styles.dialogBodyText, bodyTextStyle] })
+        return React.cloneElement(child, {
+          style: [styles.dialogBodyText, bodyTextStyle, child.props.style]
+        })
       }
       return child
     })

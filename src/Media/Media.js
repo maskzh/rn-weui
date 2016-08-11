@@ -47,7 +47,7 @@ const Media = (props) => {
 
   const childrenWithProps = React.Children.map(children, child => {
     if (child.type.name === 'MediaTitle') {
-      return React.cloneElement(child, { style: { marginBottom: 8 } })
+      return React.cloneElement(child, { style: [{ marginBottom: 8 }, child.props.style] })
     }
     return child
   })

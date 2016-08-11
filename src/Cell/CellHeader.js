@@ -19,10 +19,10 @@ const CellHeader = (props) => {
   const { error, children, style, ...others } = props
   const childrenWithProps = React.Children.map(children, child => {
     if (child.type.displayName === 'Image' && !child.props.style) {
-      return React.cloneElement(child, { style: styles.image })
+      return React.cloneElement(child, { style: [styles.image, child.props.style] })
     }
     if (error && child.type.name === 'Label') {
-      return React.cloneElement(child, { style: styles.error })
+      return React.cloneElement(child, { style: [child.props.style, styles.error] })
     }
     return child
   })
