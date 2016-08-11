@@ -84,17 +84,20 @@ class Select extends Component {
   render() {
     const {
       value,
+      style,
       pickerData,
+      pickerStyle,
       ...others
     } = this.props
 
     return (
       <View>
         <Text
-          style={styles.text}
+          style={[styles.text, style]}
           onPress={() => this.setState({ visible: true })}
         >{this.state.label}</Text>
         <Picker
+          style={pickerStyle}
           visible={this.state.visible}
           pickerData={pickerData}
           selectedValue={value}
@@ -109,7 +112,9 @@ class Select extends Component {
 
 Select.propTypes = {
   value: PropTypes.any,
+  style: Text.propTypes.style,
   pickerData: PropTypes.array,
+  pickerStyle: View.propTypes.style,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
 }
