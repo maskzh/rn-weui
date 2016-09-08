@@ -44,4 +44,3 @@ android/keystores/debug.keystore
 /ios
 /lib
 .*config
-/index.*.js

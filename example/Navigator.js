@@ -1,28 +1,25 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import {
   Platform,
   Navigator,
   StyleSheet
 } from 'react-native'
-import { connect } from 'react-redux'
 import genNavBar from './components/NavBar'
-import TabBar from './containers/TabBar'
-import { TABBAR } from './containers/TabBar/utils'
 
 // Scene
-import Button from './containers/Button'
-import Cell from './containers/Cell'
-import Toast from './containers/Toast'
-import Dialog from './containers/Dialog'
-import Progress from './containers/Progress'
-import Msg from './containers/Msg'
-import Article from './containers/Article'
-import ActionSheet from './containers/ActionSheet'
-import Icons from './containers/Icons'
-import Panel from './containers/Panel'
-import Tab from './containers/Tab'
-import SearchBar from './containers/SearchBar'
-
+import Grid from './page/Grid'
+import Button from './page/Button'
+import Cell from './page/Cell'
+import Toast from './page/Toast'
+import Dialog from './page/Dialog'
+import Progress from './page/Progress'
+import Msg from './page/Msg'
+import Article from './page/Article'
+import ActionSheet from './page/ActionSheet'
+import Icons from './page/Icons'
+import Panel from './page/Panel'
+import Tab from './page/Tab'
+import SearchBar from './page/SearchBar'
 
 const routes = [{
   scene: 'Button',
@@ -63,7 +60,7 @@ const routes = [{
 }]
 
 const styles = StyleSheet.create({
-  container: {
+  page: {
     flex: 1,
     backgroundColor: '#fbf9fe'
   }
@@ -74,14 +71,13 @@ class AppNavigator extends Component {
     global.__NAV__ = navigator
     const currentRoute = routes.filter((item) => item.scene === route.scene)[0]
     if (currentRoute) return <currentRoute.component {...route} navigator={navigator} />
-    return <TabBar navigator={navigator} />
+    return <Grid navigator={navigator} />
   }
   render() {
-    const { tab, navStyles, navMapper } = this.props
     return (
       <Navigator
         ref="navigator"
-        style={styles.container}
+        style={styles.page}
         configureScene={(route) => {
           if (Platform.OS === 'android') {
             return Navigator.SceneConfigs.FloatFromRightAndroid
@@ -91,12 +87,12 @@ class AppNavigator extends Component {
           }
           return Navigator.SceneConfigs.PushFromRight
         }}
-        initialRoute={{ title: TABBAR[tab] }}
+        initialRoute={{ title: 'Weui' }}
         renderScene={this.renderScene}
         navigationBar={
           <Navigator.NavigationBar
-            style={navStyles}
-            routeMapper={genNavBar(navMapper)}
+            style={{ backgroundColor: 'black' }}
+            routeMapper={genNavBar({})}
           />
         }
       />
@@ -104,16 +100,4 @@ class AppNavigator extends Component {
   }
 }
 
-AppNavigator.propTypes = {
-  tab: PropTypes.string.isRequired,
-  navMapper: PropTypes.object,
-  navStyles: PropTypes.object,
-}
-
-function mapStateToProps(state) {
-  const {
-    navigation: { tab, navMapper, navStyles }
-  } = state
-  return { tab, navMapper, navStyles }
-}
-export default connect(mapStateToProps)(AppNavigator)
+export default AppNavigator

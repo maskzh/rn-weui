@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
 })
 
-export default class Triangle extends Component {
+class Triangle extends Component {
   static defaultProps = {
     direction: 'up',
     width: 0,
@@ -120,3 +120,5 @@ Triangle.propTypes = {
   color: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 }
+
+export default Triangle
