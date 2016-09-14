@@ -1,5 +1,5 @@
 import Toast from './Toast'
 
-module.exports = {
+export {
   Toast
 }

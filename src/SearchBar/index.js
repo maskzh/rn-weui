@@ -1,5 +1,5 @@
 import SearchBar from './SearchBar'
 
-module.exports = {
+export {
   SearchBar
 }

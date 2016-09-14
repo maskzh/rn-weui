@@ -1,5 +1,5 @@
 import Progress from './Progress'
 
-module.exports = {
+export {
   Progress
 }

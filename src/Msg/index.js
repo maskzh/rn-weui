@@ -1,5 +1,5 @@
 import Msg from './Msg'
 
-module.exports = {
+export {
   Msg
 }

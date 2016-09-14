@@ -22,7 +22,7 @@ const Text = (props) => {
 }
 
 Text.propTypes = {
-  style: Text.propTypes.style,
+  style: RNText.propTypes.style,
   children: PropTypes.node
 }
 

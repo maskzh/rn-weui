@@ -23,7 +23,7 @@ import { Dialog } from './Dialog'
 import { ActionSheet } from './ActionSheet'
 import { SearchBar } from './SearchBar'
 
-module.exports = {
+export {
   StyleSheet,
   Button, ButtonArea,
   Grids, Grid, GridIcon, GridLabel,

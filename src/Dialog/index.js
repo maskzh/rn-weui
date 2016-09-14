@@ -2,6 +2,6 @@
 // import Confirm from './Confirm'
 import Dialog from './Dialog'
 
-module.exports = {
+export {
   Dialog
 }

@@ -6,7 +6,7 @@ import MediaDescription from './MediaDesc'
 import MediaInfo from './MediaInfo'
 import MediaInfoMeta from './MediaInfoMeta'
 
-module.exports = {
+export {
   Media,
   MediaHeader,
   MediaBody,

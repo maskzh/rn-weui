@@ -5,7 +5,7 @@ import H2 from './H2'
 import H3 from './H3'
 import P from './P'
 
-module.exports = {
+export {
   Article,
   Section,
   H1,

@@ -8,7 +8,7 @@ import Uploader from './Uploader'
 import Label from './Label'
 import Select from './Select'
 
-module.exports = {
+export {
   TextArea,
   Input,
   Switch,

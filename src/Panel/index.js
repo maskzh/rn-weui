@@ -3,7 +3,7 @@ import PanelHeader from './PanelHeader'
 import PanelBody from './PanelBody'
 import PanelFooter from './PanelFooter'
 
-module.exports = {
+export {
   Panel,
   PanelHeader,
   PanelBody,

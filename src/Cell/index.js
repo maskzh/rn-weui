@@ -7,7 +7,7 @@ import CellBody from './CellBody'
 import CellFooter from './CellFooter'
 import CellText from './CellText'
 
-module.exports = {
+export {
   Cells,
   CellsTitle,
   CellsTips,

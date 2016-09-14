@@ -1,5 +1,5 @@
 import ActionSheet from './ActionSheet'
 
-module.exports = {
+export {
   ActionSheet
 }
