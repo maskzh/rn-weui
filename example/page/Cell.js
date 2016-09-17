@@ -12,7 +12,6 @@ import {
   CellHeader,
   CellBody,
   CellFooter,
-  CellText,
   Input,
   Label,
   TextArea,
@@ -132,7 +131,7 @@ class CellScene extends Component {
         <CellsTitle>带说明的列表项</CellsTitle>
         <Cells>
           <Cell>
-            <CellBody><CellText>标题文字</CellText></CellBody>
+            <CellBody>标题文字</CellBody>
             <CellFooter>说明文字</CellFooter>
           </Cell>
         </Cells>
@@ -142,36 +141,36 @@ class CellScene extends Component {
             <CellHeader>
               <Image source={{ uri: 'http://weui.github.io/weui/images/icon_nav_button.png' }} />
             </CellHeader>
-            <CellBody><CellText>标题文字</CellText></CellBody>
+            <CellBody>标题文字</CellBody>
             <CellFooter>说明文字</CellFooter>
           </Cell>
           <Cell>
             <CellHeader>
               <Image source={{ uri: 'http://weui.github.io/weui/images/icon_nav_button.png' }} />
             </CellHeader>
-            <CellBody><CellText>标题文字</CellText></CellBody>
+            <CellBody>标题文字</CellBody>
             <CellFooter>说明文字</CellFooter>
           </Cell>
         </Cells>
         <CellsTitle>带跳转的列表项</CellsTitle>
         <Cells>
           <Cell access onPress={() => {}}>
-            <CellBody><CellText>标题文字</CellText></CellBody>
+            <CellBody>标题文字</CellBody>
             <CellFooter />
           </Cell>
           <Cell access onPress={() => {}}>
-            <CellBody><CellText>标题文字</CellText></CellBody>
+            <CellBody>标题文字</CellBody>
             <CellFooter />
           </Cell>
         </Cells>
         <CellsTitle>带说明、跳转的列表项</CellsTitle>
         <Cells>
           <Cell onPress={() => {}}>
-            <CellBody><CellText>标题文字</CellText></CellBody>
+            <CellBody>标题文字</CellBody>
             <CellFooter access>说明文字</CellFooter>
           </Cell>
           <Cell access onPress={() => {}}>
-            <CellBody><CellText>标题文字</CellText></CellBody>
+            <CellBody>标题文字</CellBody>
             <CellFooter>说明文字</CellFooter>
           </Cell>
         </Cells>
@@ -181,14 +180,14 @@ class CellScene extends Component {
             <CellHeader>
               <Image source={{ uri: 'http://weui.github.io/weui/images/icon_nav_button.png' }} />
             </CellHeader>
-            <CellBody><CellText>标题文字</CellText></CellBody>
+            <CellBody>标题文字</CellBody>
             <CellFooter>说明文字</CellFooter>
           </Cell>
           <Cell access onPress={() => {}}>
             <CellHeader>
               <Image source={{ uri: 'http://weui.github.io/weui/images/icon_nav_button.png' }} />
             </CellHeader>
-            <CellBody><CellText>标题文字</CellText></CellBody>
+            <CellBody>标题文字</CellBody>
             <CellFooter>说明文字</CellFooter>
           </Cell>
         </Cells>
@@ -223,7 +222,7 @@ class CellScene extends Component {
         <CellsTitle>开关</CellsTitle>
         <Cells>
           <Cell>
-            <CellBody><CellText>标题文字</CellText></CellBody>
+            <CellBody>标题文字</CellBody>
             <Switch
               onChange={this.handleSwitchChange}
               value={this.state.switchValue}
