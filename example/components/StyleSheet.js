@@ -16,4 +16,4 @@ export function create(styles) {
   return StyleSheet.create(platformStyles)
 }
 
-export default { create }
+export default {...StyleSheet, create }
