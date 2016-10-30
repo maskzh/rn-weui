@@ -67,6 +67,11 @@ class Select extends Component {
     if (!Array.isArray(value)) value = [value]
 
     if (value.length) {
+      if (pickerData.indexOf(value) === -1) {
+        value = [];
+      } else {
+        value = [value];
+      }
       return getLabel(pickerData, value)
     }
     return <Text style={[styles.text, styles.placeholder]}>{placeholder}</Text>
