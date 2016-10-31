@@ -68,9 +68,9 @@ class Select extends Component {
 
     if (value.length) {
       if (pickerData.indexOf(value) === -1) {
-        value = [];
+        value = []
       } else {
-        value = [value];
+        value = [value]
       }
       return getLabel(pickerData, value)
     }
