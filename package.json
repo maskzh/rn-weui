@@ -1,6 +1,6 @@
 {
   "name": "rn-weui",
-  "version": "0.0.14",
+  "version": "0.1.0",
   "description": "weui for react-native",
   "main": "./lib",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maskzh/react-native-weui.git"
+    "url": "git+https://github.com/maskzh/rn-weui.git"
   },
   "keywords": [
     "react",
@@ -40,9 +40,9 @@
   "author": "maskzh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maskzh/react-native-weui/issues"
+    "url": "https://github.com/maskzh/rn-weui/issues"
   },
-  "homepage": "https://github.com/maskzh/react-native-weui#readme",
+  "homepage": "https://github.com/maskzh/rn-weui#readme",
   "dependencies": {
     "lodash": "^4.13.1",
     "react": "^15.1.0",
