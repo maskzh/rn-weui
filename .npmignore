@@ -1,0 +1,7 @@
+android/
+docs/
+example/
+ios/
+.*rc
+.*config
+.index.*.js
