@@ -1,12 +1,12 @@
 {
   "name": "rn-weui",
-  "version": "0.9.9",
+  "version": "1.0.0",
   "description": "weui for react-native",
   "main": "./lib",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "clean": "rimraf ./lib",
-    "build": "npm run clean & babel ./src --out-dir ./lib",
+    "build": "npm run lint & npm run clean & babel ./src --out-dir ./lib",
     "lint": "eslint ./src/**/*.js",
     "test": "jest"
   },
@@ -20,6 +20,7 @@
     "weui"
   ],
   "devDependencies": {
+    "babel-cli": "^6.18.0",
     "babel-eslint": "^7.1.1",
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
@@ -33,7 +34,8 @@
     "react-native-navbar": "^1.6.0",
     "react-native-stylekit": "^0.0.3",
     "react-native-tab-navigator": "^0.3.3",
-    "react-test-renderer": "15.4.1"
+    "react-test-renderer": "15.4.1",
+    "rimraf": "^2.5.4"
   },
   "rnpm": {
     "assets": [

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, ScrollView } from 'react-native'
 import NavigationBar from 'react-native-navbar'
-import { ButtonArea, Button, ButtonPreview } from '../../src'
+import { ButtonArea, Button } from '../../src'
 import S from 'react-native-stylekit'
 
 const ButtonScene = ({ navigator }) => {

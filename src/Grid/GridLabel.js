@@ -17,7 +17,6 @@ const GridLabel = ({ children, style, ...others }) =>
 GridLabel.propTypes = {
   children: PropTypes.node,
   style: Text.propTypes.style,
-  others: PropTypes.object
 }
 
 export default GridLabel

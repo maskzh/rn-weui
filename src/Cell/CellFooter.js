@@ -44,7 +44,6 @@ CellFooter.propTypes = {
   access: PropTypes.bool,
   children: PropTypes.node,
   style: Text.propTypes.style,
-  others: PropTypes.object
 }
 
 export default CellFooter

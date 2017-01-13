@@ -33,7 +33,6 @@ CellHeader.propTypes = {
   error: PropTypes.bool,
   children: PropTypes.node,
   style: View.propTypes.style,
-  others: PropTypes.object
 }
 
 export default CellHeader

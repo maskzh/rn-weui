@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
   previewHeader: {
     paddingTop: V.weuiCellGapV,
     paddingBottom: V.weuiCellGapV,
-    paddingLeft: V.weuiCellGapH,
     paddingRight: V.weuiCellGapH,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: V.weuiCellBorderColor,

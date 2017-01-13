@@ -1,20 +1,11 @@
 import React, { PropTypes } from 'react'
-import {
-  StyleSheet,
-  Text as RNText
-} from 'react-native'
-import $V from '../variable'
+import { StyleSheet, Text as RNText } from 'react-native'
+import V from '../variable'
 
-const Text = (props) => {
-  const {
-    style,
-    children,
-    ...others,
-  } = props
-
+const Text = ({ style, children, ...others, }) => {
   const styleObj = StyleSheet.flatten(style)
-  const fontSize = styleObj.fontSize || $V.baseFontSize
-  const lineHeight = styleObj.lineHeight || fontSize * $V.baseLineHeight
+  const fontSize = styleObj.fontSize || V.baseFontSize
+  const lineHeight = styleObj.lineHeight || fontSize * V.baseLineHeight
 
   return (
     <RNText style={[style, { fontSize, lineHeight }]} {...others}>{children}</RNText>

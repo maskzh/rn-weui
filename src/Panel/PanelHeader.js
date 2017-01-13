@@ -27,7 +27,6 @@ PanelHeader.propTypes = {
   children: PropTypes.node,
   style: View.propTypes.style,
   textStyle: Text.propTypes.style,
-  others: PropTypes.object
 }
 
 export default PanelHeader

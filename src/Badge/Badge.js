@@ -4,10 +4,6 @@ import V from '../variable'
 
 const styles = StyleSheet.create({
   badge: {
-    // paddingTop: 12 * 0.25,
-    // paddingBottom: 12 * 0.25,
-    // paddingLeft: 12 * 0.4,
-    // paddingRight: 12 * 0.4,
     width: 12 * 1.8,
     height: 12 * 1.5,
     borderRadius: 18,
@@ -51,7 +47,7 @@ const Badge = ({ dot = false, preset = 'default', style, textStyle, children, ..
 
 Badge.propTypes = {
   dot: PropTypes.bool,
-  preset: PropTypes.string,
+  preset: PropTypes.oneOf(['default', 'header', 'body', 'footer']),
   style: View.propTypes.style,
   textStyle: Text.propTypes.style,
   children: PropTypes.node,

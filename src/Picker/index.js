@@ -1,7 +1,7 @@
 import Picker from './Picker'
-import PickerGroup from './PickerGroup'
+import PickerSection from './PickerSection'
 
 export {
   Picker,
-  PickerGroup
+  PickerSection
 }

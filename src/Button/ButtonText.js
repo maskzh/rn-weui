@@ -1,8 +1,5 @@
 import React, { PropTypes } from 'react'
-import {
-  StyleSheet,
-  Text,
-} from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import V from '../variable'
 
 const styles = StyleSheet.create({

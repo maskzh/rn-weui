@@ -8,9 +8,7 @@ const styles = StyleSheet.create({
 })
 
 const Section = ({ style, children }) =>
-  <View style={[styles.section, style]}>
-    {children}
-  </View>
+  <View style={[styles.section, style]}>{children}</View>
 
 Section.propTypes = {
   style: View.propTypes.style,

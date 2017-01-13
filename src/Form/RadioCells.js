@@ -8,13 +8,16 @@ const styles = StyleSheet.create({
   radio: {
     fontSize: 16,
     paddingLeft: V.weuiCellInnerGapH,
-  }
+  },
+  disabled: {
+    opacity: 0.5
+  },
 })
 
-const RadioCells = ({ value, options, onChange, style, children, ...others }) =>
-  <Cells style={style} {...others}>
+const RadioCells = ({ value, options, onChange, disabled, style, children, ...others }) =>
+  <Cells style={[style, disabled ? styles.disabled : null]} {...others}>
     {options.map((option, idx) =>
-      <Cell key={idx} onPress={() => onChange(option.value)}>
+      <Cell key={idx} onPress={() => !disabled && onChange(option.value)}>
         <CellBody>
           <CellText>{option.label || option.value}</CellText>
         </CellBody>
@@ -28,8 +31,9 @@ const RadioCells = ({ value, options, onChange, style, children, ...others }) =>
 
 RadioCells.propTypes = {
   value: PropTypes.any,
-  onChange: PropTypes.func,
   options: PropTypes.array.isRequired,
+  onChange: PropTypes.func,
+  disabled: PropTypes.bool,
   style: Icon.propTypes.style,
   children: PropTypes.node,
 }

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
+import V from '../variable'
 
 const styles = StyleSheet.create({
   popupHeader: {
@@ -7,6 +8,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: '#E5E5E5',
+    backgroundColor: '#fbf9fe'
   },
   popupActionLeft: {
     flex: 1,
@@ -15,6 +17,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     paddingLeft: 15,
+    fontSize: V.baseFontSize
   },
   popupActionRight: {
     flex: 1,
@@ -23,6 +26,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     paddingRight: 15,
+    fontSize: V.baseFontSize
   }
 })
 

@@ -41,7 +41,6 @@ PanelFooter.propTypes = {
   children: PropTypes.node,
   style: TouchableHighlight.propTypes.style,
   textStyle: Text.propTypes.style,
-  others: PropTypes.object
 }
 
 export default PanelFooter

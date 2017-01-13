@@ -7,7 +7,7 @@ import {
   Cells, CellsTitle, CellsTips, Cell, CellHeader, CellBody, CellFooter, CellText,
 } from './Cell'
 import {
-  TextArea, Input, Switch, RadioCells, CheckboxCells, Picker, Uploader, Label, Select, Slider, Agreement
+  TextArea, Input, Switch, RadioCells, CheckboxCells, Uploader, Label, Select, Slider, Agreement
 } from './Form'
 import { Icon } from './Icon'
 import { Toast } from './Toast'
@@ -31,16 +31,17 @@ import { Badge } from './Badge'
 import { Flex, FlexItem } from './Flex'
 import { LoadMore } from './LoadMore'
 import { Popup, PopupHeader } from './Popup'
-import { PPicker, PickerGroup } from './Picker'
+import { Picker, PickerSection } from './Picker'
 import { Gallery, GalleryDelete } from './Gallery'
 import { Preview, PreviewHeader, PreviewBody, PreviewFooter, PreviewItem, PreviewLabel, PreviewValue } from './Preview'
+import { Toptips } from './Toptips'
 
 export {
   StyleSheet,
   Button, ButtonArea, ButtonPreview,
   Grids, Grid, GridIcon, GridLabel,
   Cells, CellsTitle, CellsTips, Cell, CellHeader, CellBody, CellFooter, CellText,
-  TextArea, Input, Switch, RadioCells, CheckboxCells, Picker, Uploader, Label, Select, Slider, Agreement,
+  TextArea, Input, Switch, RadioCells, CheckboxCells, Uploader, Label, Select, Slider, Agreement,
   Icon,
   Toast,
   Msg,
@@ -57,8 +58,9 @@ export {
   Flex, FlexItem,
   LoadMore,
   Popup, PopupHeader,
-  PPicker, PickerGroup,
+  Picker, PickerSection,
   Gallery, GalleryDelete,
   Preview, PreviewHeader, PreviewBody, PreviewFooter, PreviewItem, PreviewLabel,
-  PreviewValue
+  PreviewValue,
+  Toptips
 }

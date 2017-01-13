@@ -3,14 +3,16 @@
   "extends": "airbnb",
   "parser": "babel-eslint",
   "rules": {
-    "comma-dangle": 0,
+    "comma-dangle": 0, # 松散行尾逗号
     "semi": [2, "never"], # 不允许分号
     "no-underscore-dangle": 0, # 允许 _
-    # "react/jsx-sort-props": 0,
+    "global-require": 0, # 允许 require
     "react/jsx-first-prop-new-line": 0, # 属性不需另起一行
-    "jsx-a11y/no-static-element-interactions": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }], # js 扩展名
-    "react/forbid-prop-types": 0
+    "jsx-a11y/no-static-element-interactions": 0,
+    "react/forbid-prop-types": 0,
+    "import/prefer-default-export": 0,
+    "import/no-unresolved": [2, { ignore: ['\.(png || jpg || gif)$'] }], # 忽略 require 图片的错误
 
     # "id-length": 0,
     # "no-param-reassign": [2, { "props": false }], # 参数不可修改，属性可修改
@@ -19,6 +21,5 @@
     # "react/prop-types": 0,
     # "react/prefer-stateless-function": 0,
     # "react/jsx-no-bind": 0
-    # "import/no-unresolved": [2, { ignore: ['\.(png || jpg || gif)$'] }] # 忽略 require 图片的错误
   }
 }

@@ -1,15 +1,15 @@
 import React, { PropTypes } from 'react'
 import { Text } from 'react-native'
 import { create } from '../StyleSheet'
-import $V from '../variable'
+import V from '../variable'
 
 const styles = create({
   h3: {
     fontSize: 15,
     fontWeight: '400',
-    lineHeight: 15 * $V.baseLineHeight,
+    lineHeight: 15 * V.baseLineHeight,
     android: {
-      lineHeight: Math.round(15 * $V.baseLineHeight),
+      lineHeight: Math.round(15 * V.baseLineHeight),
     },
   }
 })

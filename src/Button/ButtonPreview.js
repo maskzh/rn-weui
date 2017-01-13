@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: V.weuiDialogLinkColor,
     lineHeight: 50,
+    fontSize: V.baseFontSize,
   },
   previewBtnDefaultText: {
     color: V.weuiTextColorGray,

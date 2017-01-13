@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { Text, View, StyleSheet } from 'react-native'
-import Picker from './Picker'
+import { Picker } from '../Picker'
 import V from '../variable'
 
 const styles = StyleSheet.create({
@@ -14,38 +14,35 @@ const styles = StyleSheet.create({
   }
 })
 
-const getLabel = (data, valueArr) => {
-  if (data.filter(item => item.children).length) {
-    let firstPickedObj
-    let secondPickedObj
-    return valueArr.map((value, index) => {
-      if (index === 0) {
-        firstPickedObj = data.filter(item => item.value === value)[0]
-        return firstPickedObj.label
-      }
-      if (index === 1) {
-        secondPickedObj = firstPickedObj.children.filter(item => item.value === value)[0]
-        return secondPickedObj.label
-      }
-      if (index === 2) {
-        return secondPickedObj.children.filter(item => item.value === value)[0].label
-      }
-      return false
-    }).join(' ')
+const valueToOptions = (value, options) => {
+  let tmp = options
+  return value.map((val, idx) => {
+    if (idx === 0) return options
+    tmp = (tmp.filter(option => option.value === value[idx - 1])[0] || tmp[0] || {}).children || []
+    return tmp
+  })
+}
+
+const getLabel = (value, options) => {
+  const cascade = options.filter(item => item.children).length
+  const _options = cascade ? valueToOptions(value, options) : options
+
+  if (cascade) {
+    return value.map((val, idx) =>
+      (_options[idx].filter(option => option.value === val)[0] || {}).label
+    ).join(' ')
   }
-  return valueArr.join(' ')
+  return value.join(' ')
 }
 
 const initLabel = (arg) => {
-  let { value } = arg
-  const { pickerData, placeholder } = arg
+  let _value = arg.value
 
-  if (!Array.isArray(value)) value = [value]
+  if (!Array.isArray(arg.value)) _value = [arg.value]
 
-  if (value.length) {
-    return getLabel(pickerData, value)
-  }
-  return <Text style={[styles.text, styles.placeholder]}>{placeholder}</Text>
+  if (_value.length && _value.every(item => item)) return getLabel(_value, arg.options)
+
+  return <Text style={[styles.text, styles.placeholder]}>{arg.placeholder}</Text>
 }
 
 class Select extends Component {
@@ -55,25 +52,26 @@ class Select extends Component {
       visible: false,
       label: initLabel(props)
     }
-    this.handlePickerDone = this.handlePickerDone.bind(this)
-    this.handleRequestClose = this.handleRequestClose.bind(this)
+    this.onChange = this.onChange.bind(this)
+    this.onClose = this.onClose.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({ label: initLabel(nextProps) })
   }
 
-  handlePickerDone(value) {
+  onChange(value) {
     if (this.props.onChange) this.props.onChange(value)
-    this.setState({ visible: false })
+    this.onClose()
   }
 
-  handleRequestClose() {
+  onClose() {
     this.setState({ visible: false })
   }
 
   render() {
-    const { value, style, pickerData, pickerStyle, ...others } = this.props
+    const { value, options, pickerStyle, style, ...others } = this.props
+
     return (
       <View>
         <Text
@@ -82,12 +80,12 @@ class Select extends Component {
         >{this.state.label}</Text>
         <Picker
           style={pickerStyle}
-          visible={this.state.visible}
-          pickerData={pickerData}
-          selectedValue={value}
-          onPickerDone={this.handlePickerDone}
-          onRequestClose={this.handleRequestClose}
+          options={options}
+          value={value}
           {...others}
+          visible={this.state.visible}
+          onClose={this.onClose}
+          onChange={this.onChange}
         />
       </View>
     )
@@ -96,10 +94,10 @@ class Select extends Component {
 
 Select.propTypes = {
   value: PropTypes.any,
-  style: Text.propTypes.style,
-  pickerData: PropTypes.array,
-  pickerStyle: View.propTypes.style,
+  options: PropTypes.array,
   onChange: PropTypes.func,
+  style: Text.propTypes.style,
+  pickerStyle: View.propTypes.style,
   placeholder: PropTypes.string,
 }
 

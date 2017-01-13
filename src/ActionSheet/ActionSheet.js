@@ -184,9 +184,9 @@ const ActionSheet = ({
 
 ActionSheet.propTypes = {
   autoDectect: PropTypes.bool,
-  type: PropTypes.string,
-  menus: PropTypes.array,
-  actions: PropTypes.array,
+  type: PropTypes.oneOf(['ios', 'android']),
+  menus: PropTypes.arrayOf(PropTypes.object),
+  actions: PropTypes.arrayOf(PropTypes.object),
   visible: PropTypes.bool,
   onShow: PropTypes.func,
   onClose: PropTypes.func,

@@ -202,9 +202,9 @@ const Dialog = ({
 
 Dialog.propTypes = {
   autoDectect: PropTypes.bool,
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['ios', 'android']),
   title: PropTypes.string,
-  buttons: PropTypes.array,
+  buttons: PropTypes.arrayOf(PropTypes.object),
   visible: PropTypes.bool,
   onShow: PropTypes.func,
   onClose: PropTypes.func,

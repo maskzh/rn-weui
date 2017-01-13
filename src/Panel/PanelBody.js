@@ -19,7 +19,6 @@ const PanelBody = ({ children, style, ...others }) => {
 PanelBody.propTypes = {
   children: PropTypes.node,
   style: View.propTypes.style,
-  others: PropTypes.object
 }
 
 export default PanelBody

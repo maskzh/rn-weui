@@ -31,7 +31,6 @@ const Cells = ({ children, style, ...others }) => {
 Cells.propTypes = {
   children: PropTypes.node,
   style: View.propTypes.style,
-  others: PropTypes.object
 }
 
 export default Cells

@@ -16,7 +16,6 @@ const GridIcon = ({ children, style, ...others }) =>
 GridIcon.propTypes = {
   children: PropTypes.node,
   style: View.propTypes.style,
-  others: PropTypes.object
 }
 
 export default GridIcon

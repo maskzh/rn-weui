@@ -126,7 +126,7 @@ Button.propTypes = {
   onPressIn: PropTypes.func,
   onPressOut: PropTypes.func,
   onLongPress: PropTypes.func,
-  style: TouchableHighlight.propTypes.style,
+  style: View.propTypes.style,
   children: PropTypes.node,
 }
 

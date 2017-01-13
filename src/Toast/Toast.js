@@ -1,11 +1,5 @@
 import React, { PropTypes } from 'react'
-import {
-  Modal,
-  View,
-  Text,
-  StyleSheet,
-  ActivityIndicator,
-} from 'react-native'
+import { Modal, View, Text, StyleSheet, ActivityIndicator } from 'react-native'
 import { Mask } from '../Mask'
 import { Icon } from '../Icon'
 import V from '../variable'

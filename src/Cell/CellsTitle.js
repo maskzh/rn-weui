@@ -19,7 +19,6 @@ const CellsTitle = ({ children, style, ...others }) =>
 CellsTitle.propTypes = {
   children: PropTypes.node,
   style: Text.propTypes.style,
-  others: PropTypes.object
 }
 
 export default CellsTitle

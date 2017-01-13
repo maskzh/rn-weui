@@ -11,8 +11,8 @@ const Flex = ({ direction = 'row', wrap = 'wrap', style, children, ...others }) 
   >{children}</View>
 
 Flex.propTypes = {
-  direction: PropTypes.string,
-  wrap: PropTypes.string,
+  direction: PropTypes.oneOf(['row', 'column']),
+  wrap: PropTypes.oneOf(['wrap', 'nowrap']),
   style: View.propTypes.style,
   children: PropTypes.node,
 }

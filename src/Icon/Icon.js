@@ -112,7 +112,11 @@ const Icon = ({
 
 Icon.propTypes = {
   msg: PropTypes.bool,
-  name: PropTypes.string,
+  name: PropTypes.oneOf(['success', 'waiting', 'warn', 'info', 'success_circle',
+    'success_no_circle', 'waiting_circle', 'circle', 'download',
+    'info_circle', 'safe_success', 'safe_warn', 'cancel', 'back', 'delete',
+    'search', 'clear'
+  ]),
   size: PropTypes.number,
   color: PropTypes.string,
   style: Text.propTypes.style,

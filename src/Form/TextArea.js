@@ -19,12 +19,13 @@ const styles = create({
 })
 
 const TextArea = ({
-  style,
   value,
   onChange,
   showCounter = true,
   maxLength,
   defaultValue,
+  disabled = false,
+  style,
   ...others
 }) =>
   <View>
@@ -34,6 +35,7 @@ const TextArea = ({
       onChangeText={onChange}
       value={value}
       defaultValue={defaultValue}
+      editable={!disabled}
       style={[styles.textarea, style]}
       {...others}
     />
@@ -50,6 +52,7 @@ TextArea.propTypes = {
   maxLength: PropTypes.number,
   defaultValue: PropTypes.string,
   onChange: PropTypes.func,
+  disabled: PropTypes.bool,
   style: TextInput.propTypes.style,
 }
 

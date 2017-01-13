@@ -71,8 +71,9 @@ export default () =>
 - [x] Flex
 - [x] Badge
 - [x] Agreement
-- [ ] Picker
-- [ ] Select
+- [x] Picker
+- [x] Select
+- [x] Toptips
 
 ### License
 The MIT License(http://opensource.org/licenses/MIT)

@@ -86,6 +86,7 @@ const Uploader = ({
   files = [],
   onChange,
   onFilePress,
+  disabled = false,
   style,
   ...others
 }) => {
@@ -136,7 +137,11 @@ const Uploader = ({
           const { uri, error, status, isVertical } = file
           const source = { uri, isVertical }
           return (
-            <TouchableOpacity key={idx} activeOpacity={0.6} onPress={() => onFilePress(file)}>
+            <TouchableOpacity
+              key={idx}
+              activeOpacity={0.6}
+              onPress={() => !disabled && onFilePress(file)}
+            >
               <View style={styles.uploaderFile}>
                 <Image source={source} style={styles.uploaderFileImage} />
                 {error || status ?
@@ -152,7 +157,7 @@ const Uploader = ({
           <TouchableOpacity
             activeOpacity={0.6}
             style={styles.uploaderAddButton}
-            onPress={showImagePicker}
+            onPress={!disabled ? showImagePicker : null}
           >
             <View style={styles.uploaderAddButtonRec} />
             <View style={[styles.uploaderAddButtonRec, { transform: [{ rotate: '90deg' }] }]} />
@@ -169,6 +174,7 @@ Uploader.propTypes = {
   onChange: PropTypes.func,
   onFilePress: PropTypes.func,
   files: PropTypes.array,
+  disabled: PropTypes.bool,
   style: View.propTypes.style,
 }
 

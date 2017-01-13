@@ -1,10 +1,5 @@
 import React, { PropTypes } from 'react'
-import {
-  View,
-  TouchableHighlight,
-  StyleSheet,
-  Dimensions
-} from 'react-native'
+import { View, TouchableHighlight, StyleSheet, Dimensions } from 'react-native'
 import GridIcon from './GridIcon'
 import GridLabel from './GridLabel'
 import V from '../variable'

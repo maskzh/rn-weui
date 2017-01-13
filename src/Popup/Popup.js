@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Modal, View, StyleSheet, Dimensions, Animated } from 'react-native'
+import { Modal, View, StyleSheet, Dimensions, Animated, Easing } from 'react-native'
 import { Mask } from '../Mask'
 
 const { width, height } = Dimensions.get('window')
@@ -29,6 +29,7 @@ class Popup extends Component {
       Animated.timing(this.state.translateY, {
         toValue: this.height,
         duration: 300,
+        easing: Easing.easeOut,
       }).start(() => this.setState({ visible: false }))
     }
   }
