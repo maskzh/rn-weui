@@ -1,5 +1,7 @@
-import Tab from './Tab'
+import TabBar from './TabBar'
+import NavBar from './NavBar'
 
 export {
-  Tab
+  TabBar,
+  NavBar
 }
