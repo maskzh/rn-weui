@@ -44,7 +44,7 @@ class Toptips extends Component {
       Animated.timing(this.state.translateY, {
         toValue: -this.height,
         duration: 150,
-        easing: Easing.easeOut
+        easing: Easing.easeInOut,
       }).start(() => this.setState({ visible: false }))
     }
   }
@@ -56,6 +56,7 @@ class Toptips extends Component {
       Animated.timing(this.state.translateY, {
         toValue: 0,
         duration: 150,
+        easing: Easing.easeInOut,
       }).start()
     })
   }

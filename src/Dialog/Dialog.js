@@ -179,7 +179,6 @@ const Dialog = ({
     <Modal
       visible={visible}
       transparent={!false}
-      animationType="fade"
       onShow={onShow}
       onRequestClose={onClose}
     >
