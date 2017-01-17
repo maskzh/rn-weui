@@ -20,7 +20,7 @@ import {
   Media, MediaHeader, MediaBody, MediaTitle, MediaDescription, MediaInfo, MediaInfoMeta,
 } from './Media'
 import { Progress } from './Progress'
-import { Tab } from './Tab'
+import { TabBar, NavBar } from './Tab'
 import { Dialog } from './Dialog'
 import { ActionSheet } from './ActionSheet'
 import { SearchBar } from './SearchBar'
@@ -49,7 +49,7 @@ export {
   Media, MediaHeader, MediaBody, MediaTitle, MediaDescription, MediaInfo, MediaInfoMeta,
   Panel, PanelHeader, PanelBody, PanelFooter,
   Progress,
-  Tab,
+  TabBar, NavBar,
   Dialog,
   ActionSheet,
   SearchBar,
