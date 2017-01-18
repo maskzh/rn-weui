@@ -4,17 +4,18 @@ import V from '../variable'
 
 const styles = StyleSheet.create({
   badge: {
-    width: 12 * 1.8,
-    height: 12 * 1.5,
-    borderRadius: 18,
-    backgroundColor: V.weuiColorWarn,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  badgeText: {
     color: '#FFFFFF',
     fontSize: 12,
+    paddingLeft: 3.5,
+    paddingRight: 3.5,
+    lineHeight: 14,
+    paddingTop: 1,
     textAlign: 'center',
+    backgroundColor: V.weuiColorWarn,
+    borderWidth: 1.5,
+    borderColor: 'transparent',
+    borderRadius: 8.5,
+    overflow: 'hidden',
   },
 
   default: {},
@@ -37,19 +38,18 @@ const styles = StyleSheet.create({
   },
 })
 
-const Badge = ({ dot = false, preset = 'default', style, textStyle, children, ...others }) =>
-  <View
+const Badge = ({ dot = false, preset = 'default', style, children, ...others }) =>
+  <Text
     style={[styles.badge, styles[preset], dot ? styles.dot : {}, style]}
     {...others}
   >
-    <Text style={[styles.badgeText, textStyle]}>{children}</Text>
-  </View>
+    {children}
+  </Text>
 
 Badge.propTypes = {
   dot: PropTypes.bool,
   preset: PropTypes.oneOf(['default', 'header', 'body', 'footer']),
   style: View.propTypes.style,
-  textStyle: Text.propTypes.style,
   children: PropTypes.node,
 }
 

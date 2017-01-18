@@ -14,6 +14,7 @@ import {
   CellHeader,
   CellBody,
   CellFooter,
+  CellText,
   Input,
   Label,
   TextArea,
@@ -190,7 +191,7 @@ class CellScene extends Component {
         <Cells>
           <Cell>
             <CellHeader>
-              <Image source={{ uri: 'https://weui.io/images/icon_tabbar.png' }} /><Badge preset="header">8</Badge>
+              <Image source={{ uri: 'https://weui.io/images/icon_tabbar.png' }} />
             </CellHeader>
             <CellBody>标题文字</CellBody>
             <CellFooter>说明文字</CellFooter>
@@ -199,8 +200,14 @@ class CellScene extends Component {
             <CellHeader>
               <Image source={{ uri: 'https://weui.io/images/icon_tabbar.png' }} />
             </CellHeader>
-            <CellBody>标题文字</CellBody>
-            <CellFooter>说明文字</CellFooter>
+            <CellBody>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <CellText>标题文字</CellText><Badge preset="body">News</Badge>
+              </View>
+            </CellBody>
+            <CellFooter>
+              说明文字<Badge preset="footer">8</Badge>
+            </CellFooter>
           </Cell>
         </Cells>
         <CellsTitle>带跳转的列表项</CellsTitle>
